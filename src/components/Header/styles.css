@@ -1,6 +1,8 @@
 .container-header {
+    grid-column: 1 / 3;
+    justify-content: space-around;
     display: flex;
-    width: 100vw;
+    width: calc(100% - 50px);
     height: 90px;
     border-bottom: solid 1px var(--light-white);
 }
@@ -14,7 +16,6 @@ nav {
 
 .info {
     display: flex;
-    /* width: 52%; */
     align-items: center;
 }
 
@@ -33,11 +34,16 @@ nav {
 }
 
 .dataset {
+    width: 220px;
     display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.dataset li {
     height: 30px;
     align-items: center;
     align-self: center;
-    cursor: pointer;
 }
 
 .dataset img {
@@ -45,15 +51,58 @@ nav {
     color: var(--heading);
 }
 
-.dataset img:first-child {
-    margin-right: 15px;
+.dataset .submenu_container {
+    height: 45px;
 }
 
-.dataset img:nth-child(4) {
-    margin-left: 15px;
+.submenu {
+    display: none;
 }
 
-.dataset img:last-child {
+.submenu_container:hover>ul {
+    display: block;
+}
+
+.dataset .submenu>li {
+    margin: 0px 0px 0px 0px;
+    color: var(--secondary-blue-50);
+}
+
+.submenu {
+    background: var(--light-white);
+    width: 125px;
+    border-radius: 3px;
+    position: absolute;
+    right: 7.7vw;
+}
+
+.dataset .submenu>li {
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0;
+    width: auto;
+    padding: 25px 20px;
+}
+
+.dataset .submenu>li:nth-child(2) {
+    border-top: solid 2px var(--secondary-blue-50);
+}
+
+.submenu li:hover:first-child {
+    background: var(--secondary-blue-50);
+    border-radius: 2px 2px 0 0;
+    /* background: linear-gradient(360deg, #171F52 0%, #E51C44 100%); */
+    color: var(--light-white);
+}
+
+.submenu li:hover:last-child {
+    background: var(--secondary-blue-50);
+    border-radius: 0 0 1px 1px;
+    /* background: linear-gradient(360deg, #171F52 0%, #E51C44 100%); */
+    color: var(--light-white);
+}
+
+.dataset .icon_user {
     width: 45px;
-    margin-left: 15px;
+    height: 45px;
 }

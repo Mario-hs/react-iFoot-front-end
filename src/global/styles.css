@@ -51,6 +51,7 @@ a,
 ul,
 li {
     text-decoration: none;
+    list-style: none;
 }
 
 a,
@@ -147,6 +148,7 @@ input[type=checkbox]:focus {
 #root {
     background: linear-gradient(180deg, #0E1647 0%, #0A1033 100%);
     min-height: 100vh;
-    height: 100%;
     width: 100vw;
+    height: 100%;
+    max-width: 100%;
 }

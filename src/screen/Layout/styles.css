@@ -1,4 +1,20 @@
 .container-layout {
     display: flex;
     flex-direction: column;
+    display: grid;
+    grid-template-columns: 125px calc(100% - 125px);
+    grid-template-rows: 90px calc(100% - 290px) 90px;
+    column-gap: 50px;
+    row-gap: 55px;
+
+}
+
+.outlet {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: 680px 460px;
+    grid-template-rows: 550px 350px;
+    column-gap: 50px;
+    row-gap: 30px;
+    width: 85vw;
 }

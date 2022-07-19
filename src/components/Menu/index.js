@@ -6,7 +6,7 @@ import icon_explorar from '../../assets/explorar.png'
 export const Menu = () => {
     return (
         <nav className="container-nav">
-            <a className="nav top">
+            <a className="nav top active" >
                 <img src={icon_peladas} alt="icone de peladas" />
                 <p>Peladas</p>
             </a>

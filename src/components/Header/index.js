@@ -15,13 +15,27 @@ export const Header = () => {
                     <img src={icon} alt="icone ifoot" />
                     <p><span>iFoot</span> | Todo dia é dia de bater uma bolinha.</p>
                 </div>
-                <div className='dataset'>
-                    <img src={cartoes} alt="icone de cartões" />
-                    <CurrencyCircleDollar size={30} color="#E5E5E5" />
-                    <SoccerBall size={30} color="#E5E5E5" style={{ marginLeft: 15 + 'px' }} />
-                    <img src={assistencias} alt="icone de assistências" />
-                    <img src={user} alt="foto do usuário" />
-                </div>
+                <ul className='dataset'>
+                    <li>
+                        <img src={cartoes} alt="icone de cartões" title="Cartão vermelho" />
+                    </li>
+                    <li>
+                        <CurrencyCircleDollar size={30} color="#E5E5E5" title="Dinheiro" />
+                    </li>
+                    <li>
+                        <SoccerBall size={30} color="#E5E5E5" title="Gols" />
+                    </li>
+                    <li style={{ display: "flex" }}>
+                        <img src={assistencias} alt="icone de assistências" title="Assistências" />
+                    </li>
+                    <li className="submenu_container">
+                        <img className="icon_user" src={user} alt="foto do usuário" title="Mario" />
+                        <ul className="submenu">
+                            <li><span>Perfil</span></li>
+                            <li><span>Sair</span></li>
+                        </ul>
+                    </li>
+                </ul>
             </nav>
         </div>
     )
