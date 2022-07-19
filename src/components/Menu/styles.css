@@ -1,0 +1,43 @@
+.container-nav {
+    height: 100%;
+    width: 125px;
+    position: absolute;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav {
+    background: none;
+    border: solid 2px var(--secondary-blue-50);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--heading);
+    margin-bottom: 5px;
+}
+
+.nav:hover {
+    background: linear-gradient(360deg, #171F52 0%, #E51C44 100%);
+}
+
+.nav.top {
+    border-radius: 0 8px 0 0;
+}
+
+.nav.bottom {
+    border-radius: 0 0 8px 0;
+}
+
+.nav img {
+    width: 30px;
+    height: 30px;
+    margin: 15px auto 5px;
+}
+
+.nav p {
+    font-family: 'Rajdhani';
+    font-weight: 700;
+    margin-bottom: 15px;
+}

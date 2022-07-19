@@ -1,0 +1,152 @@
+:root {
+    --primary-red: #E51C44;
+
+    --secondary-blue-100: #0A1033;
+    --secondary-blue-90: #0D133D;
+    --secondary-blue-80: #0E1647;
+    --secondary-blue-70: #1B2565;
+    --secondary-blue-60: #1B2565;
+    --secondary-blue-50: #243189;
+    --secondary-blue-40: #1D2766;
+    --secondary-blue-30: #495BCC;
+
+    --overlay: rgba(0, 0, 0, 0.7);
+    --highlight: #ABB1CC;
+    --heading: #DDE3F0;
+    --light-white: #FCFCFE;
+
+    --line: #991F36;
+    --on: #32BD50;
+
+    --title-700: "Rajdhani";
+    --title-700: "Rajdhani" 500;
+    --text-500: "Inter" 500;
+    --text-400: "Inter" 300;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+}
+
+h2 {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+}
+
+p,
+span,
+input,
+button {
+    font-family: 'Inter', sans-serif;
+}
+
+a,
+ul,
+li {
+    text-decoration: none;
+}
+
+a,
+input,
+button {
+    cursor: pointer;
+}
+
+
+input[type=radio] {
+    cursor: pointer;
+    margin-left: 85%;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #243189;
+    background: linear-gradient(180deg, #0E1647 0%, #0A1033 100%);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+input[type=radio]::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--light-green);
+    position: absolute;
+    /* border-radius: 1px; */
+    border-radius: 50%;
+    opacity: 0;
+
+}
+
+input[type=radio]:checked::after {
+    opacity: 1;
+}
+
+input[type=radio]:checked {
+    border: 1px solid var(--light-green);
+
+}
+
+input[type=radio]:focus {
+    box-shadow: 0 0 5px var(--light-green);
+}
+
+input[type=checkbox] {
+    cursor: pointer;
+    margin-left: 85%;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #243189;
+    background: linear-gradient(180deg, #0E1647 0%, #0A1033 100%);
+    border-radius: 2px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+input[type=checkbox]::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--light-green);
+    position: absolute;
+    /* border-radius: 1px; */
+    border-radius: 2px;
+    opacity: 0;
+
+}
+
+input[type=checkbox]:checked::after {
+    opacity: 1;
+}
+
+input[type=checkbox]:checked {
+    border: 1px solid var(--light-green);
+
+}
+
+input[type=checkbox]:focus {
+    box-shadow: 0 0 5px var(--light-green);
+}
+
+#root {
+    background: linear-gradient(180deg, #0E1647 0%, #0A1033 100%);
+    min-height: 100vh;
+    height: 100%;
+    width: 100vw;
+}

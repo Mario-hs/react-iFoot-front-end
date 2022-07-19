@@ -1,0 +1,48 @@
+button {
+    text-align: left;
+    color: var(--light-white);
+}
+
+button img {
+    padding: 2px 2px 2px 0px;
+    margin-right: 20px;
+}
+
+button {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.red {
+    background: var(--primary-red);
+    border: solid 2px var(--primary-red);
+}
+
+.red img {
+    border-right: solid 2px var(--line);
+}
+
+.red:hover {
+    transition: 0.2s;
+    background: var(--line);
+    border: solid 2px var(--line);
+}
+
+.blue img {
+    border-right: solid 2px var(--secondary-blue-30);
+}
+
+.blue {
+    background: none;
+    border: solid 2px var(--secondary-blue-30);
+}
+
+.blue:hover {
+    transition: 0.2s;
+    background: var(--secondary-blue-30);
+}

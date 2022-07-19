@@ -1,0 +1,59 @@
+.container-header {
+    display: flex;
+    width: 100vw;
+    height: 90px;
+    border-bottom: solid 1px var(--light-white);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+.info {
+    display: flex;
+    /* width: 52%; */
+    align-items: center;
+}
+
+.info img {
+    margin: 5px;
+}
+
+.info p {
+    font-family: 'Rajdhani';
+    font-weight: 500;
+    color: var(--light-white);
+}
+
+.info p span {
+    font-weight: 700;
+}
+
+.dataset {
+    display: flex;
+    height: 30px;
+    align-items: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+.dataset img {
+    width: 35px;
+    color: var(--heading);
+}
+
+.dataset img:first-child {
+    margin-right: 15px;
+}
+
+.dataset img:nth-child(4) {
+    margin-left: 15px;
+}
+
+.dataset img:last-child {
+    width: 45px;
+    margin-left: 15px;
+}

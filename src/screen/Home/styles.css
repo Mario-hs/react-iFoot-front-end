@@ -1,0 +1,93 @@
+.container {
+    padding-left: calc(100vw - 87vw);
+    padding-right: calc(100vw - 87vw);
+    display: grid;
+    grid-template-rows: 150px 3fr 100px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
+    row-gap: 1rem;
+    column-gap: 5rem;
+}
+
+header {
+    width: 390px;
+    justify-content: end;
+    align-items: center;
+    font-size: 2rem;
+    display: flex;
+    align-self: end;
+    grid-column: 1 / 3;
+}
+
+h1,
+h2 {
+    color: var(--light-white);
+    text-align: center;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 42px;
+}
+
+header h1 {
+    font-size: 62px;
+    font-weight: 500;
+}
+
+
+header img {
+    margin: auto 15px;
+    width: 50px;
+    height: 50px;
+}
+
+main {
+    grid-column: 1 /3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-right {
+    width: 480px;
+    height: 480px;
+    background: linear-gradient(180deg, #1D2766 0%, #171F52 100%);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 80px 30px;
+    justify-content: center;
+    align-self: center;
+    margin: auto;
+}
+
+.box-right h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 32px;
+    line-height: 42px;
+}
+
+.box-right p {
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--highlight);
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+}
+
+.box-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-left p {
+    text-align: center;
+    font-family: 'Rajdhani';
+    color: var(--light-white);
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 2.4rem;
+}
