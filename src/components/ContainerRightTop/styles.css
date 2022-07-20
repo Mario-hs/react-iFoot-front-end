@@ -1,6 +1,141 @@
 .container_right_top {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
     max-width: 460px;
     height: 550px;
     border-radius: 8px;
     background: var(--secondary-blue-60);
+}
+
+.pelada_top {
+    background-image: url('../../assets/illustration_campo.png');
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.filtro {
+    background: linear-gradient(0deg, #121D33 0%, rgba(18, 29, 51, 0.7) 23.44%, rgba(18, 29, 51, 0.6) 46.35%, rgba(18, 29, 51, 0) 100%);
+    border-radius: 8px 8px 0px 0px;
+    padding: 10px 20px 5px;
+}
+
+.pelada_top p {
+    color: var(--heading);
+    font-size: 0.85rem;
+    font-weight: 300;
+    justify-content: left;
+    margin-bottom: 5px;
+}
+
+.pelada_top h1 {
+    font-size: 20px;
+    text-align: end;
+    line-height: 22px;
+}
+
+.pelada_top .filtro>p:nth-child(2) {
+    font-size: 0.95rem;
+}
+
+.pelada_top p span {
+    font-weight: 500;
+}
+
+.pelada_bottom {
+    padding: 15px 30px 0px;
+    height: calc(100% - 125px);
+}
+
+.title_list {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px var(--light-white);
+    padding-bottom: 10px;
+}
+
+.title_list h2 {
+    font-size: 18px;
+}
+
+.title_list span {
+    font-size: 14px;
+    color: var(--highlight);
+}
+
+.container_list {
+    margin-top: 10px;
+    height: calc(100% - 45px);
+    overflow: overlay;
+}
+
+.container_list .jogador {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px auto 0px;
+}
+
+.photo_user {
+    background: var(--line);
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container_status p {
+    color: var(--highlight);
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.container_status {
+    display: flex;
+    align-items: center;
+}
+
+.status {
+    width: 8px;
+    height: 8px;
+    background: var(--on);
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.not {
+    background: var(--warning);
+}
+
+.jogador {
+    align-items: center;
+}
+
+.jogador p,
+h3 {
+    color: var(--highlight);
+}
+
+.jogador h3 {
+    cursor: pointer;
+}
+
+.score {
+    display: flex;
+}
+
+.score p {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.buttons_confirmes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 15px;
+    position: sticky;
+    z-index: 100;
+    bottom: 5px;
+    margin: auto 5px;
+    width: 385px;
 }

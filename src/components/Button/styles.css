@@ -42,6 +42,10 @@ button {
     border: solid 2px var(--secondary-blue-30);
 }
 
+.buttons_confirmes .blue {
+    background: var(--secondary-blue-60);
+}
+
 .blue:hover {
     transition: 0.2s;
     background: var(--secondary-blue-30);

@@ -7,6 +7,11 @@
     display: block;
 }
 
+.container_left .container_list_peladas {
+    overflow: auto;
+    height: calc(930px - 250px);
+}
+
 .container_left .top {
     padding: 15px 0px 25px;
     border-bottom: solid 1px var(--highlight);
@@ -38,14 +43,20 @@
 .container_left .bottom p>span {
     font-size: 0.9rem;
     font-weight: 300;
+    color: var(--highlight);
 }
 
 .container_left .bottom .container_pelada {
     display: flex;
 }
 
+.container_pelada {
+    margin: auto auto 30px;
+    cursor: pointer;
+}
+
 .photo_pelada {
-    width: 100px;
+    width: 115px;
     height: 105px;
     background: var(--primary-red);
     border-radius: 4px;
@@ -54,6 +65,11 @@
 
 .info_pelada {
     width: calc(100% - 120px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-bottom: solid 1px var(--secondary-blue-40);
+    border-radius: 2px;
 }
 
 .info_pelada h2,
@@ -63,12 +79,34 @@ p {
     align-items: center;
 }
 
+.container_left .bottom .info_pelada p {
+    color: var(--highlight);
+}
+
+.info_pelada h2 span {
+    display: flex;
+    width: 110px;
+    justify-content: space-around;
+}
+
 .info_pelada p,
-span {
+.info_pelada span {
     font-weight: 300;
 }
 
-.info_pelada p span {
-    align-items: center;
+.info_row {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.info_row div {
+    display: flex;
+    align-self: center;
+}
+
+.info_row div>span {
+    margin: auto 10px;
+    color: var(--highlight);
 }

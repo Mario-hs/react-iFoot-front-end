@@ -31,19 +31,25 @@ nav {
 
 .info p span {
     font-weight: 700;
+    margin-right: 10px;
 }
 
 .dataset {
-    width: 220px;
+    width: 330px;
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
 }
 
 .dataset li {
     height: 30px;
     align-items: center;
     align-self: center;
+    cursor: pointer;
+}
+
+.dataset li p {
+    font-size: 24px;
+    color: var(--heading);
 }
 
 .dataset img {

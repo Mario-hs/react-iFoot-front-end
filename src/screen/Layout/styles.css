@@ -18,3 +18,9 @@
     row-gap: 30px;
     width: 85vw;
 }
+
+@media (min-width: 1445px) {
+    .outlet {
+        justify-content: center;
+    }
+}
