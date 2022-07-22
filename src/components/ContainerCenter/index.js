@@ -8,10 +8,11 @@ export const ContainerCenter = (props) => {
     return (
         <main className="container_center">
             {props.user === 'otherUser' ? (
-                < ProfileOtherUser />
+                <ProfileOtherUser />
             ) : (
                 <ProfileUser />
             )}
+
             <section className='cc_relatorios'>
                 <h1>Relatório</h1>
                 <div className='cc_buttons'>

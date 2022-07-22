@@ -4,25 +4,15 @@ import { ContainerRightBottom } from "../../components/ContainerRightBottom";
 import { ContainerCenter } from "../../components/ContainerCenter";
 import { Header } from "../../components/Header";
 import { Menu } from "../../components/Menu";
+import { Outlet } from "react-router-dom";
 import './styles.css'
 
-export const Layout = (props) => {
+export const Layout = () => {
     return (
         <div className="container-layout">
             <Header />
             <Menu />
-            <div className="outlet">
-
-                {props.type === 0 && (
-                    <ContainerCenter user={'User'} />
-                )} {props.type === 1 && (
-                    <>
-                        <ContainerLeft />
-                        <ContainerRightTop />
-                        <ContainerRightBottom />
-                    </>
-                )}
-            </div>
+            <Outlet />
         </div>
     )
 }

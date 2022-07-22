@@ -1,3 +1,4 @@
+import { NavLink, Outlet, Link } from "react-router-dom";
 import { CurrencyCircleDollar, SoccerBall, Binoculars } from "phosphor-react";
 
 import icon from '../../assets/icon/apito.svg'
@@ -32,10 +33,20 @@ export const Header = () => {
                         <Binoculars size={32} color="#dde3f0" weight="fill" />
                     </li>
                     <li className="submenu_container">
-                        <img className="icon_user" src={user} alt="foto do usuário" title="Mario" />
+                        <Link to='../profile_user'>
+                            <img className="icon_user" src={user} alt="foto do usuário" title="Mario" />
+                        </Link>
                         <ul className="submenu">
-                            <li><span>Perfil</span></li>
-                            <li><span>Sair</span></li>
+                            <li>
+                                <Link to='../profile_user'>
+                                    Perfil
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to='../home'>
+                                    Sair
+                                </Link>
+                            </li>
                         </ul>
                     </li>
                 </ul>
