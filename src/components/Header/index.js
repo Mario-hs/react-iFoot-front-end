@@ -1,7 +1,6 @@
 import { CurrencyCircleDollar, SoccerBall, Binoculars } from "phosphor-react";
 
 import icon from '../../assets/icon/apito.svg'
-import assistencias from '../../assets/assistencias.png'
 import cartoes from '../../assets/cartoes.png'
 import user from '../../assets/user.png'
 
@@ -19,7 +18,7 @@ export const Header = () => {
                     <li>
                         <img src={cartoes} alt="icone de cartões" title="Cartão vermelho" />
                     </li>
-                    <li title="Dinheiro">
+                    <li title={`${56} Dinheiro`}>
                         <CurrencyCircleDollar size={30} color="#dde3f0" weight="fill" />
                     </li>
                     <li title="Score">

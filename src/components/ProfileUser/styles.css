@@ -1,0 +1,130 @@
+.cc_data_user {
+    display: flex;
+    align-items: center;
+    padding-bottom: 50px;
+    border-bottom: solid 1px var(--light-white);
+}
+
+.cc_right {
+    width: 55%;
+    margin-left: 10%;
+}
+
+.cc_left {
+    width: 35%;
+}
+
+.cc_data_user_photo {
+    width: 120px;
+    height: 120px;
+    background: var(--primary-red);
+    border-radius: 8px;
+    margin: auto auto 20px;
+}
+
+.cc_data_user_photo {
+    box-shadow: 0px 5px 22px rgba(73, 91, 204, 0.6);
+}
+
+.container_center .cc_left p {
+    margin-bottom: 10px;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: solid 1px;
+
+}
+
+.container_center .cc_left h1:nth-child(2) {
+    justify-content: center;
+    padding-bottom: 10px;
+    border-bottom: none;
+}
+
+.container_center .cc_left .cc_score {
+    cursor: default;
+    height: 30px;
+    width: 30px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+
+.cc_right label {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.cc_right label span {
+    width: 15%;
+    margin-right: 10px;
+    color: var(--light-white);
+    font-family: 'Rajdhani';
+    font-weight: 700;
+}
+
+.cc_right input,
+select {
+    width: 85%;
+    padding: 10px 15px;
+    font-family: 'Inter';
+    font-weight: 500;
+    color: var(--highlight);
+    border-radius: 8px;
+    border: solid 1px var(--secondary-blue-60);
+}
+
+.cc_right h1 {
+    padding: 10px 0px 15px;
+    border-bottom: solid 1px;
+    margin-bottom: 35px;
+}
+
+.cc_right .idade_posicao {
+    display: flex;
+}
+
+.idade_posicao label {
+    width: 50%;
+}
+
+.idade_posicao label span {
+    width: 28%;
+}
+
+.idade_posicao label .idade {
+    width: 30%;
+}
+
+@media (max-width: 900px) {
+    .cc_data_user {
+        display: block;
+    }
+
+    .cc_right,
+    .cc_left {
+        width: 100%;
+        margin: 0px 0px 45px;
+    }
+}
+
+@media (max-width: 495px) {
+    .cc_right .idade_posicao {
+        display: block;
+    }
+
+    .idade_posicao label {
+        width: 100%;
+    }
+
+    .idade_posicao label span {
+        width: 15%;
+    }
+
+    .idade_posicao label .idade {
+        width: 85%;
+    }
+}

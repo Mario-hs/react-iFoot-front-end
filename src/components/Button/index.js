@@ -21,6 +21,18 @@ export const Button = (props) => {
                         {props.msg}
                     </button>
                 </>
+            )} {props.tipo === 2 && (
+                <>
+                    <button className='red' style={{ justifyContent: "center" }}>
+                        {props.msg}
+                    </button>
+                </>
+            )}{props.tipo === 3 && (
+                <>
+                    <button className='blue' style={{ justifyContent: "center" }}>
+                        {props.msg}
+                    </button>
+                </>
             )}
         </>
     )

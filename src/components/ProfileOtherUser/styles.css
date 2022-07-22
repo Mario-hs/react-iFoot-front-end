@@ -1,0 +1,55 @@
+.cc_top {
+    margin-bottom: 30px;
+}
+
+.cc_top,
+.cc_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cc_bottom {
+    padding-bottom: 30px;
+    border-bottom: solid 1px var(--light-white);
+    justify-content: space-around;
+}
+
+.cc_data_other_user_photo {
+    width: 150px;
+    height: 140px;
+    background: #00BCD4;
+    border-radius: 8px;
+    margin-right: 25px;
+}
+
+.cc_line_top span,
+.cc_line_bottom span {
+    margin-left: 5px;
+}
+
+.cc_line_top p,
+.cc_line_bottom p {
+    margin-bottom: 10px;
+}
+
+.cc_bottom .cc_line_top p .cc_score {
+    height: 30px;
+    width: 30px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+@media (max-width: 850px) {
+    .cc_top {
+        display: grid;
+        justify-items: center;
+    }
+
+    .cc_data_other_user_photo {
+        margin: auto 0px 15px;
+    }
+}

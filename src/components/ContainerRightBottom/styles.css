@@ -2,7 +2,7 @@
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     max-width: 460px;
-    height: 350px;
+    min-height: 350px;
     border-radius: 8px;
     background: var(--secondary-blue-60);
     padding: 35px 30px;
@@ -65,4 +65,20 @@ h1 img {
     background: var(--primary-red);
     border-radius: 4px;
     margin-right: 10px;
+}
+
+@media(max-width: 1110px) {
+    .container_right_bottom {
+        grid-row: 1 / 2;
+    }
+}
+
+@media(max-width: 890px) {
+    .container_right_bottom {
+        max-width: 85%;
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+        justify-self: center;
+        background: linear-gradient(180deg, #1D2766 0%, rgba(23, 31, 82, 0) 100%);
+    }
 }
