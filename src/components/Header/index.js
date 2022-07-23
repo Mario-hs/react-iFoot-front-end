@@ -1,4 +1,4 @@
-import { NavLink, Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CurrencyCircleDollar, SoccerBall, Binoculars } from "phosphor-react";
 
 import icon from '../../assets/icon/apito.svg'
@@ -8,6 +8,7 @@ import user from '../../assets/user.png'
 import './styles.css'
 
 export const Header = () => {
+
     return (
         <div className="container-header">
             <nav>

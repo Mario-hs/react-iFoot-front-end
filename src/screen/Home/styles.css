@@ -10,7 +10,7 @@
 
 header {
     width: 390px;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     font-size: 2rem;
     display: flex;

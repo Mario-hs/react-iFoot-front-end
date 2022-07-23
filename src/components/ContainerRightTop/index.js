@@ -5,7 +5,7 @@ import './styles.css'
 
 export const ContainerRightTop = () => {
     return (
-        <section className='container_right_top'>
+        <>
             <div className="pelada_top">
                 <div className="filtro">
                     <h1>Pelada da Firma</h1>
@@ -40,134 +40,12 @@ export const ContainerRightTop = () => {
                             </span>
                         </div>
                     </div>
-
-                    <div className="jogador">
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                            <div className="photo_user"></div>
-                            <div>
-                                <h3>Jorge Souza</h3>
-                                <div className="container_status">
-                                    <div className="status not"></div>
-                                    <p>À confirmado</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div style={{ display: "flex", width: "75px", justifyContent: "space-between" }}>
-                            <Wallet size={20} color="#dde3f0" weight="fill" style={{ cursor: "pointer" }} />
-                            <span className="score">
-                                <Star size={20} color="#dde3f0" weight="fill" style={{ cursor: "pointer" }} />
-                                <p>8,2</p>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="jogador">
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                            <div className="photo_user"></div>
-                            <div>
-                                <h3>Jorge Souza</h3>
-                                <div className="container_status">
-                                    <div className="status not"></div>
-                                    <p>À confirmado</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div style={{ display: "flex", width: "75px", justifyContent: "space-between" }}>
-                            <Wallet size={20} color="#dde3f0" weight="fill" style={{ cursor: "pointer" }} />
-                            <span className="score">
-                                <Star size={20} color="#dde3f0" weight="fill" style={{ cursor: "pointer" }} />
-                                <p>8,2</p>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="jogador">
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                            <div className="photo_user"></div>
-                            <div>
-                                <h3>Jorge Souza</h3>
-                                <div className="container_status">
-                                    <div className="status not"></div>
-                                    <p>À confirmado</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div style={{ display: "flex", width: "75px", justifyContent: "space-between" }}>
-                            <Wallet size={20} color="#dde3f0" weight="fill" style={{ cursor: "pointer" }} />
-                            <span className="score">
-                                <Star size={20} color="#dde3f0" weight="fill" style={{ cursor: "pointer" }} />
-                                <p>8,2</p>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="jogador">
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                            <div className="photo_user"></div>
-                            <div>
-                                <h3>Jorge Souza</h3>
-                                <div className="container_status">
-                                    <div className="status not"></div>
-                                    <p>À confirmado</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div style={{ display: "flex", width: "75px", justifyContent: "space-between" }}>
-                            <Wallet size={20} color="#dde3f0" weight="fill" style={{ cursor: "pointer" }} />
-                            <span className="score">
-                                <Star size={20} color="#dde3f0" weight="fill" style={{ cursor: "pointer" }} />
-                                <p>8,2</p>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="jogador">
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                            <div className="photo_user"></div>
-                            <div>
-                                <h3>Jorge Souza</h3>
-                                <div className="container_status">
-                                    <div className="status not"></div>
-                                    <p>À confirmado</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div style={{ display: "flex", width: "75px", justifyContent: "space-between" }}>
-                            <Wallet size={20} color="#dde3f0" weight="fill" style={{ cursor: "pointer" }} />
-                            <span className="score">
-                                <Star size={20} color="#dde3f0" weight="fill" style={{ cursor: "pointer" }} />
-                                <p>8,2</p>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="jogador">
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                            <div className="photo_user"></div>
-                            <div>
-                                <h3>Jorge Souza</h3>
-                                <div className="container_status">
-                                    <div className="status not"></div>
-                                    <p>À confirmado</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div style={{ display: "flex", width: "75px", justifyContent: "space-between" }}>
-                            <Wallet size={20} color="#dde3f0" weight="fill" style={{ cursor: "pointer" }} />
-                            <span className="score">
-                                <Star size={20} color="#dde3f0" weight="fill" style={{ cursor: "pointer" }} />
-                                <p>8,2</p>
-                            </span>
-                        </div>
-                    </div>
                     <div className='buttons_confirmes'>
                         <Button tipo={1} msg="Confirmar presença" />
                         <Button tipo={0} msg="Não confirmar" />
                     </div>
                 </div>
-
             </div>
-
-        </section>
+        </>
     )
 }

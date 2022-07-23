@@ -1,8 +1,7 @@
 .container-header {
-    grid-column: 1 / 3;
+    grid-column: 1 / 4;
     justify-content: space-around;
     display: flex;
-    width: calc(100% - 50px);
     height: 90px;
     border-bottom: solid 1px var(--light-white);
 }
@@ -117,18 +116,4 @@ nav {
 .dataset .icon_user {
     width: 45px;
     height: 45px;
-}
-
-@media (max-width: 1110px) {
-    .container-header {
-        width: calc(100% - 25px);
-    }
-}
-
-@media(max-width: 600px) {
-    .container-header {
-        grid-column: 1 / 3;
-        grid-row: 1 / 2;
-        width: 100%;
-    }
 }

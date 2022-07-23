@@ -42,14 +42,3 @@
     align-items: center;
     font-size: 20px;
 }
-
-@media (max-width: 850px) {
-    .cc_top {
-        display: grid;
-        justify-items: center;
-    }
-
-    .cc_data_other_user_photo {
-        margin: auto 0px 15px;
-    }
-}

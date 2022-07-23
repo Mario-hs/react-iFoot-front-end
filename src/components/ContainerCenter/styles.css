@@ -38,36 +38,3 @@
 .cc_buttons button {
     width: 200px;
 }
-
-@media (max-width: 990px) {
-    .container_center {
-        justify-self: auto;
-    }
-
-    .cc_buttons {
-        display: block;
-    }
-
-    .cc_buttons button {
-        width: 100%;
-    }
-}
-
-@media(max-width: 750px) {
-    .container_center {
-        padding: 60px 35px;
-    }
-
-    .cc_relatorios {
-        margin: 40px 5px;
-    }
-}
-
-@media (max-width: 600px) {
-    .container_center {
-        grid-column: auto;
-        grid-row: 3/4;
-        margin-top: 35px;
-        justify-self: center;
-    }
-}

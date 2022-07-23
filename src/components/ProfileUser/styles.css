@@ -98,33 +98,3 @@ select {
 .idade_posicao label .idade {
     width: 30%;
 }
-
-@media (max-width: 900px) {
-    .cc_data_user {
-        display: block;
-    }
-
-    .cc_right,
-    .cc_left {
-        width: 100%;
-        margin: 0px 0px 45px;
-    }
-}
-
-@media (max-width: 495px) {
-    .cc_right .idade_posicao {
-        display: block;
-    }
-
-    .idade_posicao label {
-        width: 100%;
-    }
-
-    .idade_posicao label span {
-        width: 15%;
-    }
-
-    .idade_posicao label .idade {
-        width: 85%;
-    }
-}

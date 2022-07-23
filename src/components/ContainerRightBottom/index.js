@@ -5,7 +5,7 @@ import './styles.css'
 
 export const ContainerRightBottom = () => {
     return (
-        <section className='container_right_bottom'>
+        <>
             <div className='title'>
                 <h1>
                     <img src={icon} alt="icone de avalicao" />
@@ -23,52 +23,7 @@ export const ContainerRightBottom = () => {
                         style={{ marginLeft: '10px', marginRight: '5px' }} />
                     <p>18-03</p>
                 </div>
-
-                <div className='pelada'>
-                    <Ticket size={35} color="#E51C44" weight="fill" style={{ marginRight: '10px', cursor: "pointer" }} />
-
-                    <h2>Campo Hangar</h2>
-                    <CalendarBlank size={20} color="#E51C44" weight="fill"
-                        style={{ marginLeft: '10px', marginRight: '5px' }} />
-                    <p>18-03</p>
-                </div>
-
-                <div className='pelada'>
-                    <Ticket size={35} color="#E51C44" weight="fill" style={{ marginRight: '10px', cursor: "pointer" }} />
-
-                    <h2>Campo Hangar</h2>
-                    <CalendarBlank size={20} color="#E51C44" weight="fill"
-                        style={{ marginLeft: '10px', marginRight: '5px' }} />
-                    <p>18-03</p>
-                </div>
-
-                <div className='pelada'>
-                    <Ticket size={35} color="#E51C44" weight="fill" style={{ marginRight: '10px', cursor: "pointer" }} />
-
-                    <h2>Campo Hangar</h2>
-                    <CalendarBlank size={20} color="#E51C44" weight="fill"
-                        style={{ marginLeft: '10px', marginRight: '5px' }} />
-                    <p>18-03</p>
-                </div>
-
-                <div className='pelada'>
-                    <Ticket size={35} color="#E51C44" weight="fill" style={{ marginRight: '10px', cursor: "pointer" }} />
-
-                    <h2>Campo Hangar</h2>
-                    <CalendarBlank size={20} color="#E51C44" weight="fill"
-                        style={{ marginLeft: '10px', marginRight: '5px' }} />
-                    <p>18-03</p>
-                </div>
-
-                <div className='pelada'>
-                    <Ticket size={35} color="#E51C44" weight="fill" style={{ marginRight: '10px', cursor: "pointer" }} />
-
-                    <h2>Campo Hangar</h2>
-                    <CalendarBlank size={20} color="#E51C44" weight="fill"
-                        style={{ marginLeft: '10px', marginRight: '5px' }} />
-                    <p>18-03</p>
-                </div>
             </div>
-        </section>
+        </>
     )
 }

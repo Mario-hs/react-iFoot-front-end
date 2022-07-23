@@ -4,7 +4,7 @@ import './styles.css'
 
 export const ContainerLeft = () => {
     return (
-        <main className='container_left'>
+        <>
             <section className="top">
                 <h1>Peladas</h1>
                 <p>Grupo de peladas que você participa.</p>
@@ -36,12 +36,8 @@ export const ContainerLeft = () => {
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-
-
             </section>
-        </main>
+        </>
     )
 }
