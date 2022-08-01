@@ -39,6 +39,7 @@
 
 .container_left .bottom .container_pelada {
     display: flex;
+    align-items: center;
 }
 
 .container_pelada {
@@ -72,6 +73,8 @@ p {
 
 .container_left .bottom .info_pelada p {
     color: var(--highlight);
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .info_pelada h2 span {

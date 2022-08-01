@@ -20,13 +20,13 @@ export const Menu = () => {
                 <img src={icon_peladas} alt="icone de peladas" />
                 <p>Peladas</p>
             </Link>
-            <Link to='/peladas' onClick={(e) => {
+            <Link to='/explorar' onClick={(e) => {
                 handleButtonActive(2)
             }} className={`${active === 2 ? 'nav middle active' : 'nav middle'}`} >
                 <img src={icon_explorar} alt="icone de explorar" />
                 <p>Explorar</p>
             </Link>
-            <Link to='/peladas' onClick={(e) => {
+            <Link to='/arenas' onClick={(e) => {
                 handleButtonActive(3)
             }} className={`${active === 3 ? 'nav bottom active' : 'nav bottom'}`}>
                 <img src={icon_arenas} alt="icone de arenas" />

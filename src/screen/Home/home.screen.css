@@ -61,7 +61,7 @@ main {
     margin: auto;
 }
 
-.box-right h2 {
+.box-right h1 {
     margin-bottom: 10px;
     text-align: center;
     font-size: 32px;
@@ -74,6 +74,7 @@ main {
     color: var(--highlight);
     font-size: 0.9rem;
     line-height: 1.6rem;
+    align-self: center;
 }
 
 .box-left {

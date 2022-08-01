@@ -72,7 +72,7 @@ select {
     padding: 10px 15px;
     font-family: 'Inter';
     font-weight: 500;
-    color: var(--highlight);
+    color: var(--secondary-blue-60);
     border-radius: 8px;
     border: solid 1px var(--secondary-blue-60);
 }

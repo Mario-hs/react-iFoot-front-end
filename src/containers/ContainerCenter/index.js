@@ -1,7 +1,7 @@
 
-import { Button } from '../Button'
-import { ProfileOtherUser } from '../ProfileOtherUser'
-import { ProfileUser } from '../ProfileUser'
+import { Button } from '../../components/Button'
+import { ProfileOtherUser } from '../../components/ProfileOtherUser'
+import { ProfileUser } from '../../components/ProfileUser'
 import './styles.css'
 
 export const ContainerCenter = (props) => {

@@ -1,7 +1,7 @@
 import { SoccerBall, Binoculars } from 'phosphor-react'
 import posicao from '../../assets/posicao.png'
 import { Button } from '../Button'
-import './styles.css'
+import './profileUser.css'
 
 export const ProfileUser = () => {
     return (

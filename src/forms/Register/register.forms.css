@@ -1,0 +1,177 @@
+.signUp {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 400ms ease-in;
+    display: flex;
+    overflow: auto;
+}
+
+.modal {
+    width: 480px;
+    margin: auto;
+    padding: 30px 40px;
+    background: linear-gradient(180deg, #1D2766 0%, #171F52 100%);
+    border-radius: 8px;
+}
+
+.modal p,
+span {
+    color: var(--heading);
+    font-family: 'Rajdhani' !important;
+}
+
+/* 
+.modal .label_input {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal .label_input label {
+    margin-bottom: 5px;
+}
+
+.modal .label_input input {
+    height: 45px;
+    border: solid 2px var(--secondary-blue-40);
+    border-radius: 8px;
+    padding: 5px 15px;
+    margin-bottom: 25px;
+    color: var(--middle-whi);
+} */
+/* 
+.modal a {
+    display: block;
+    text-align: end;
+    color: var(--light-white);
+} */
+
+.modal .ifoot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.modal img {
+    width: 40px;
+}
+
+.modal h1 {
+    font-size: 24px;
+}
+
+/* .modal .button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal .button a {
+    margin-top: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    width: 45%;
+    height: 45px;
+    border-radius: 8px;
+    color: var(--middle-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+} */
+
+
+
+.wrapper {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.group-option {
+    height: 70px;
+    width: 110px;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--secondary-blue-50);
+    background-color: var(--secondary-blue-40);
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.group-option>span {
+    align-self: center;
+}
+
+.form {
+    width: 100%;
+    margin-left: 0px;
+}
+
+.form label {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.form label span {
+    width: 15%;
+    margin-right: 10px;
+    color: var(--light-white);
+    font-family: 'Rajdhani';
+    font-weight: 700;
+}
+
+
+.form input,
+select {
+    width: 85%;
+    padding: 10px 15px;
+    font-family: 'Inter';
+    font-weight: 500;
+    color: var(--secondary-blue-60);
+    border-radius: 8px;
+    border: solid 1px var(--secondary-blue-60);
+}
+
+.form select {
+    width: 55%;
+}
+
+.form h1 {
+    padding: 10px 0px 15px;
+    border-bottom: solid 1px;
+    margin-bottom: 35px;
+}
+
+.form .idade_posicao {
+    display: flex;
+}
+
+
+.idade_posicao label {
+    width: 50%;
+}
+
+.idade_posicao label span {
+    width: 29%;
+}
+
+.idade_posicao label .idade {
+    width: 65%;
+}
+
+.idade_posicao .posicao_jogador {
+    justify-content: end;
+}
+
+.form button:last-child {
+    margin-top: 25px;
+}

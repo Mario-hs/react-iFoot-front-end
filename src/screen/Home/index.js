@@ -1,8 +1,9 @@
 import { Button } from '../../components/Button';
 
-import './styles.css';
+import './home.screen.css';
 import icon from '../../assets/icon/apito.svg';
 import illustration from '../../assets/illustration.png';
+import { Link } from 'react-router-dom';
 
 
 export const Home = () => {
@@ -23,8 +24,12 @@ export const Home = () => {
                     pelada br
                 </h1>
                 <p>Crie grupo para jogar suas peladas <br />reserve o campo sem dificuldades.</p>
-                <Button tipo={1} msg="Login - Já tenho conta" />
-                <Button tipo={0} msg="Register - Criar conta" />
+                <Link to='/login'>
+                    <Button type={1} value='login' msg="Login - Já tenho conta" />
+                </Link>
+                <Link to='/register'>
+                    <Button type={0} value='register' msg="Register - Criar conta" />
+                </Link>
             </section>
         </div>
     )

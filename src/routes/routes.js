@@ -1,8 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Home } from '../screen/Home'
 import { Layout } from '../screen/Layout'
-import { ContainerCenter } from '../components/ContainerCenter'
-import { ContainerGrid } from '../components/ContainerGrid'
+import { ContainerCenter } from '../containers/ContainerCenter'
+import { ContainerGrid } from '../containers/ContainerGrid'
+import { Login } from '../forms/Login'
+import { Register } from '../forms/Register'
 
 
 export const Router = () => {
@@ -10,11 +12,15 @@ export const Router = () => {
         <BrowserRouter>
             <Routes>
                 <Route path='/home' element={<Home />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/register' element={<Register />} />
+                {/* </Route> */}
                 <Route path='/' element={<Layout />} >
-                    {/* <Route path='/peladas' element={ } /> */}
                     <Route path='/profile_other_user' element={<ContainerCenter user={'otherUser'} />} />
                     <Route path='/profile_user' element={<ContainerCenter user={'User'} />} />
-                    <Route path='/peladas' element={<ContainerGrid />} />
+                    <Route path='/peladas' element={<ContainerGrid type={'peladas'} />} />
+                    <Route path='/arenas' element={<ContainerGrid type={'arenas'} />} />
+                    <Route path='/explorar' element={<ContainerGrid type={'explorar'} />} />
                 </Route>
             </Routes>
         </BrowserRouter>
