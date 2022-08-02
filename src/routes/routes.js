@@ -5,11 +5,12 @@ import { ContainerCenter } from '../containers/ContainerCenter'
 import { ContainerGrid } from '../containers/ContainerGrid'
 import { Login } from '../forms/Login'
 import { Register } from '../forms/Register'
+import history from './history'
 
 
 export const Router = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter history={history}>
             <Routes>
                 <Route path='/home' element={<Home />} />
                 <Route path='/login' element={<Login />} />

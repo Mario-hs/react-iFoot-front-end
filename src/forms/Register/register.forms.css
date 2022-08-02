@@ -10,17 +10,32 @@
 }
 
 .modal {
-    width: 480px;
+    min-width: 480px;
     margin: auto;
     padding: 30px 40px;
     background: linear-gradient(180deg, #1D2766 0%, #171F52 100%);
     border-radius: 8px;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: 300px 400px;
+    grid-gap: 20px;
+}
+
 .modal p,
 span {
     color: var(--heading);
     font-family: 'Rajdhani' !important;
+}
+
+.left {
+    display: flex;
+}
+
+.options_register {
+    align-self: center;
+    width: 100%;
 }
 
 /* 

@@ -6,25 +6,6 @@ import axios from 'axios';
 
 
 export const Button = (props) => {
-    // const handleRequest = async (datas, req) => {
-    //     // alert(JSON.stringify(datas))
-    //     // alert(req)
-    //     if (req === 'registroCampo') {
-    //         let res = await axios.post({
-    //             'method': 'POST',
-    //             'url': 'http://localhost:8080/espacos',
-    //             'user': datas
-    //         })
-    //         if (res.status) {
-    //             alert(res.espacos)
-    //             // history.push("/home");
-    //             // window.location.reload();
-    //         } else {
-    //             alert("[ERROR - Usuário ou senha invalido]")
-    //         }
-    //     }
-    // }
-
 
     return (
         <>
