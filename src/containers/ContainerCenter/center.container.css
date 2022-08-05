@@ -1,0 +1,105 @@
+.container_center {
+    padding: 65px 60px;
+    max-width: 900px;
+    width: 90%;
+    justify-self: center;
+    height: fit-content;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background: linear-gradient(180deg, #1D2766 0%, rgba(23, 31, 82, 0) 100%);
+    border-radius: 8px;
+    display: block;
+}
+
+.container_center p {
+    color: var(--heading);
+    justify-content: left;
+}
+
+.container_center p span {
+    font-family: "Rajdhani";
+    margin: auto 10px;
+}
+
+.cc_relatorios {
+    margin: 40px 65px;
+}
+
+.cc_relatorios h1 {
+    text-align: left;
+}
+
+.cc_buttons {
+    display: flex;
+    margin: 10px 0px;
+    justify-content: space-between;
+}
+
+.cc_buttons button {
+    width: 200px;
+}
+
+.ranking,
+.peladas {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+    display: flex;
+}
+
+.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.container_rank {
+    height: 130px;
+    width: 45%;
+    margin: auto;
+    overflow-y: auto;
+}
+
+.relatorio {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.relatorio span {
+    width: 65%;
+    font-size: 18px;
+    align-self: center;
+}
+
+.peladas .modal li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 20%;
+    padding: 10px 15px;
+    border-bottom: solid 1px var(--heading)
+}
+
+.peladas .modal li .cc_score {
+    font-size: 20px;
+}
+
+.ranking .modal select,
+.peladas .modal select {
+    width: 80px;
+    display: flex;
+    margin: -35px 75px 20px auto;
+    background: none;
+    color: var(--heading)
+}
+
+.peladas .modal select {
+    width: 120px;
+}

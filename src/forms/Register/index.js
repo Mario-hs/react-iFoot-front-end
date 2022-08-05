@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react'
-// import '../../global/styles.css'
+
 import { X } from 'phosphor-react';
+
 import { Link } from 'react-router-dom';
+
 import { Button } from '../../components/Button';
+
 import icon from '../../assets/icon/apito.svg';
-import './register.forms.css'
-import axios from 'axios';
+
 import history from '../../routes/history';
 import api from '../../routes/api';
+import axios from 'axios';
+import './register.forms.css'
 
 export const Register = () => {
     const [option, setOption] = useState({ "id": "" })
@@ -53,11 +57,11 @@ export const Register = () => {
                 registerJogador[prop] = value;
                 setRegisterJogador({ ...registerJogador })
             }
-            console.log(registerJogador)
+            // console.log(registerJogador)
         } else {
             registerCampo[prop] = value;
             setRegisterCampo({ ...registerCampo })
-            console.log(registerCampo)
+            // console.log(registerCampo)
         }
     }
 
@@ -70,6 +74,7 @@ export const Register = () => {
             formRegister.tipo_cadastro === 'campo'
                 ?
                 res = await axios.post('http://localhost:8080/espacos', registerCampo, { headers: { 'Content-Type': 'application/json' } })
+                // res = await api.postEspaco(registerCampo)
                 :
                 res = await axios.post('http://localhost:8080/jogadores', registerJogador, { headers: { 'Content-Type': 'application/json' } })
 
@@ -90,7 +95,7 @@ export const Register = () => {
     }, [])
 
     return (
-        <section id="signUp" className="signUp">
+        <section id="signUp" className="position">
             <div className={`${formRegister.tipo_cadastro !== '' ? 'modal grid' : 'modal'}`}>
                 <section className='left'>
                     <Link to='/home' title="Close" className="Close">
@@ -170,7 +175,7 @@ export const Register = () => {
                                 bindStateInput("senhaJogador", event.target.value);
                             }} />
                         </label>
-                        <Button type={3} register={registerJogador} request={'registroJogador'} msg={"Confirmar cadastro"} />
+                        <Button type={3} msg={"Confirmar cadastro"} />
                     </form>
                 )}
 
@@ -196,7 +201,7 @@ export const Register = () => {
                             }} />
                         </label>
                         <label htmlFor="bairro">
-                            <span>CNPJ:</span>
+                            <span>Bairro:</span>
                             <input type="text" name="bairro" placeholder='nome do bairro' onChange={(event) => {
                                 bindStateInput("bairro", event.target.value);
                             }} />
@@ -207,7 +212,7 @@ export const Register = () => {
                                 bindStateInput("senhaEspaco", event.target.value);
                             }} />
                         </label>
-                        <Button type={3} register={registerCampo} request={'registroCampo'} msg={"Confirmar cadastro"} />
+                        <Button type={3} msg={"Confirmar cadastro"} />
                     </form>
                 )}
 

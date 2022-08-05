@@ -1,4 +1,4 @@
-.signUp {
+.position {
     position: fixed;
     top: 0;
     right: 0;
@@ -11,6 +11,7 @@
 
 .modal {
     min-width: 480px;
+    width: auto;
     margin: auto;
     padding: 30px 40px;
     background: linear-gradient(180deg, #1D2766 0%, #171F52 100%);
@@ -24,9 +25,9 @@
 }
 
 .modal p,
-span {
+.modal span {
     color: var(--heading);
-    font-family: 'Rajdhani' !important;
+    font-family: 'Rajdhani';
 }
 
 .left {
@@ -37,31 +38,6 @@ span {
     align-self: center;
     width: 100%;
 }
-
-/* 
-.modal .label_input {
-    display: flex;
-    flex-direction: column;
-}
-
-.modal .label_input label {
-    margin-bottom: 5px;
-}
-
-.modal .label_input input {
-    height: 45px;
-    border: solid 2px var(--secondary-blue-40);
-    border-radius: 8px;
-    padding: 5px 15px;
-    margin-bottom: 25px;
-    color: var(--middle-whi);
-} */
-/* 
-.modal a {
-    display: block;
-    text-align: end;
-    color: var(--light-white);
-} */
 
 .modal .ifoot {
     display: flex;
@@ -77,28 +53,6 @@ span {
 .modal h1 {
     font-size: 24px;
 }
-
-/* .modal .button {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.modal .button a {
-    margin-top: 20px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    width: 45%;
-    height: 45px;
-    border-radius: 8px;
-    color: var(--middle-white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-} */
-
-
 
 .wrapper {
     margin-top: 5px;
@@ -169,7 +123,6 @@ select {
 .form .idade_posicao {
     display: flex;
 }
-
 
 .idade_posicao label {
     width: 50%;

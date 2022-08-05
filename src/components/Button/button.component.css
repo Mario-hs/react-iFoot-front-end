@@ -20,6 +20,7 @@ button {
 
 .red {
     background: var(--primary-red);
+    padding: 10px 10px 10px 0px;
     border: solid 2px var(--primary-red);
 }
 
@@ -39,6 +40,7 @@ button {
 
 .blue {
     background: none;
+    padding: 10px 10px 10px 0px;
     border: solid 2px var(--secondary-blue-30);
 }
 

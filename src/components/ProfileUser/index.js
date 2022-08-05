@@ -1,65 +1,130 @@
+import { useEffect, useState } from 'react'
+
 import { SoccerBall, Binoculars } from 'phosphor-react'
-import posicao from '../../assets/posicao.png'
+
 import { Button } from '../Button'
+
 import './profileUser.css'
 
+import posicao from '../../assets/posicao.png'
+import auth from '../../context/auth'
+import history from '../../routes/history'
+import api from '../../routes/api'
+
 export const ProfileUser = () => {
+    const [dataUser, setDataUser] = useState([])
+    const [options, setOptions] = useState([])
+    const [score, setScore] = useState([])
+
+    const bindStateInput = (prop, value) => {
+        if (prop === 'posicao') {
+            dataUser[prop] = { "id": value };
+            setDataUser({ ...dataUser })
+        } else {
+            dataUser[prop] = value;
+            setDataUser({ ...dataUser })
+        }
+        console.log(dataUser)
+    }
+
+    const handleScore = () => {
+        if (dataUser.id !== undefined) {
+            api.axios.get(`/jogadores/${dataUser.id}/score`).then((e) => {
+                setScore(e.data)
+            })
+        }
+        return score
+    }
+
+    useEffect(() => {
+        setDataUser(auth.getUser())
+        api.getPosicoes().then((e) => {
+            setOptions(options => [...e.data])
+        })
+    }, [])
+
+    const handleSubmit = async (event, method) => {
+        event.preventDefault();
+        if (method === 'DELETE') {
+            try {
+                let res = await api.axios.delete(`/jogadores/${dataUser.id}`)
+                console.log(method)
+                console.log(res)
+                alert('[COMPLETE - Usuário excluido com sucesso]')
+                auth.logout()
+                history.push("/home");
+                window.location.reload()
+            } catch (error) {
+                alert(error.response.data.message)
+                console.error(error)
+            }
+        } else {
+            try {
+                await api.axios.put(`/jogadores/${dataUser.id}`, dataUser)
+                console.log(method)
+                alert('[COMPLETE - Cadastro alterado com sucesso]')
+                window.location.reload()
+            } catch (error) {
+                alert(error.response.data.message)
+                console.error(error)
+            }
+        }
+    }
+
     return (
         <section className='cc_data_user'>
-            <div className='cc_left'>
+            <form className='cc_left' onSubmit={(e) => { handleSubmit(e, 'DELETE') }} >
                 <div className='cc_data_user_photo'></div>
-                <h1>Mario Henrique</h1>
-                <p>
-                    <span className='cc_score'>
-                        {"8,1"}
-                    </span>
-                    <span>Score</span>
-                </p>
-                <p>
-                    <img src={posicao} alt="icone posição" />
-                    <span>Posição: {"Volante"}</span>
-                </p>
-                <p>
-                    <SoccerBall size={30} color="#dde3f0" weight="fill" />
-                    <span>Gols: {"41"}</span>
-                </p>
-                <p>
-                    <Binoculars size={30} color="#dde3f0" weight="fill" />
-                    <span>Assistências: {"18"}</span>
-                </p>
-                <Button tipo={2} msg={"Excluir conta"} />
-            </div>
-            <form className='cc_right'>
+                <h1>{dataUser.nome}</h1>
+                <Button type={1} msg={"Excluir conta"} />
+            </form>
+            <form className='cc_right' onSubmit={(e) => { handleSubmit(e, 'PUT') }}>
                 <h1>Dados Pessoais</h1>
                 <label htmlFor="nome">
                     <span>Nome:</span>
-                    <input type="text" name="nome" defaultValue={"Mario Henrique"} />
+                    <input type="text" name="nome" defaultValue={dataUser.nome} onChange={(event) => {
+                        bindStateInput("nome", event.target.value)
+                    }} />
                 </label>
                 <label htmlFor="email">
                     <span>Email:</span>
-                    <input type="email" name="email" defaultValue={"mario-hp41@hotmail.com"} />
+                    <input type="email" name="email" defaultValue={dataUser.emailJogador} onChange={(event) => {
+                        bindStateInput("emailJogador", event.target.value)
+                    }} />
                 </label>
                 <label htmlFor="cpf">
                     <span>CPF:</span>
-                    <input type="text" name="cpf" defaultValue={"111.111.111-11"} />
+                    <input type="text" name="cpf" defaultValue={dataUser.cpf} onChange={(event) => {
+                        bindStateInput("cpf", event.target.value)
+                    }} />
                 </label>
                 <div className='idade_posicao'>
                     <label htmlFor="idade">
                         <span>Idade:</span>
-                        <input type="text" name="idade" defaultValue={"24"} className='idade' />
+                        <input type="date" name="idade" defaultValue={dataUser.dataNascimento} className='idade' onChange={(event) => {
+                            bindStateInput("dataNascimento", event.target.value)
+                        }} />
                     </label>
                     <label htmlFor="Posicao">
                         <span>Posição:</span>
-                        <select name="Posicao">
-                            <option value="Zagueiro">Zagueiro</option>
+                        <select name="posicao" onChange={(event) => { bindStateInput("posicao", event.target.value); }}>
+                            {dataUser.posicao !== undefined
+                                ? (<option key={dataUser.posicao.id} value={dataUser.posicao.id}>{dataUser.posicao.nomePosicao}</option>)
+                                : (<option disabled defaultValue>Selecione uma posição</option>)}
+
+                            {options !== [] && (
+                                options.map((value, index) => {
+                                    return <option key={value.id} value={value.id}>{value.nomePosicao}</option>
+                                })
+                            )}
                         </select>
                     </label>
                 </div>
                 <label htmlFor="senha">
                     <span>Senha:</span>
-                    <input type="password" name="senha" defaultValue={"1234"} />
+                    <input type="password" name="senha" defaultValue={dataUser.senhaJogador} />
                 </label>
-                <Button tipo={3} msg={"Salvar alteração"} />
+                <Button type={3} msg={"Salvar alteração"} />
             </form>
         </section>
     )

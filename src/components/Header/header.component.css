@@ -39,6 +39,10 @@ nav {
     justify-content: space-between;
 }
 
+.container-header .espaco {
+    width: 240px;
+}
+
 .dataset li {
     height: 30px;
     align-items: center;
@@ -52,8 +56,16 @@ nav {
 }
 
 .dataset img {
-    width: 35px;
+    /* width: 35px; */
     color: var(--heading);
+}
+
+.container-header .dataset .nome_espaco {
+    height: auto;
+    color: var(--heading);
+    font-size: 20px;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700px;
 }
 
 .dataset .submenu_container {

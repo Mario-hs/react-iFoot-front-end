@@ -102,15 +102,9 @@
 }
 
 @media(max-width: 890px) {
-    .container_left {
-        grid-row: 2 / 3;
-        grid-column: 1 / 3;
-        background: var(--secondary-blue-60);
-    }
-
     .outlet {
         grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: 448px 850px 450px;
+        grid-template-rows: 850px 448px 450px;
         column-gap: 0px;
     }
 
@@ -125,8 +119,14 @@
     }
 
     .container_right_top {
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+    }
+
+    .container_left {
         grid-column: 1 / 3;
         grid-row: 1 / 2;
+        background: var(--secondary-blue-60);
     }
 }
 

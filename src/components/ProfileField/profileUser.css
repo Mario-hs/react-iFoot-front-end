@@ -1,14 +1,13 @@
 .cc_data_user {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding-bottom: 50px;
     border-bottom: solid 1px var(--light-white);
 }
 
-
 .cc_right {
     width: 55%;
+    margin-left: 10%;
 }
 
 .cc_left {
@@ -98,26 +97,4 @@ select {
 
 .idade_posicao label .idade {
     width: 30%;
-}
-
-.carteira_espaco {
-    display: flex;
-    align-items: center;
-    width: 50%;
-    margin: auto auto 20px;
-    justify-content: space-evenly;
-}
-
-.container_center .cc_left .carteira_espaco p {
-    font-family: 'Rajdhani';
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    border-bottom: none;
-}
-
-.espaco {
-    padding-bottom: 0px;
-    border-bottom: none;
 }

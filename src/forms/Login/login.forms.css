@@ -1,0 +1,24 @@
+.modal {
+    width: 480px;
+}
+
+
+.modal .label_input {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal .label_input label {
+    margin-bottom: 5px;
+    color: var(--heading);
+    font-family: 'Rajdhani' !important;
+}
+
+.modal .label_input input {
+    height: 45px;
+    border: solid 2px var(--secondary-blue-40);
+    border-radius: 8px;
+    padding: 5px 15px;
+    margin-bottom: 25px;
+    color: var(--middle-whi);
+}

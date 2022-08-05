@@ -1,0 +1,140 @@
+.outlet {
+    grid-column: 2 / 3;
+    display: grid;
+    column-gap: 50px;
+    row-gap: 30px;
+    grid-template-columns: calc(51% + 50px) 40%;
+    width: 100%;
+}
+
+.container_left {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #1D2766 0%, rgba(23, 31, 82, 0) 100%);
+    padding: 40px 30px;
+    display: block;
+    height: 100%;
+}
+
+.container_right_top {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    height: 550px;
+    width: 460px;
+    border-radius: 8px;
+    background: var(--secondary-blue-60);
+}
+
+.container_right_bottom {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    width: 460px;
+    height: 350px;
+    border-radius: 8px;
+    background: var(--secondary-blue-60);
+    padding: 35px 30px;
+}
+
+.relatorio_espaco {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    transition: opacity 400ms ease-in;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.relatorio_espaco .container_form {
+    padding: 25px 70px;
+    background-color: var(--secondary-blue-60);
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    max-width: 600px;
+    width: 60%;
+    max-height: 95%;
+    overflow: auto;
+    border-radius: 8px;
+}
+
+.relatorio_espaco .container_form .icon_close {
+    align-self: self-end;
+    margin-right: -25px;
+}
+
+.relatorio_espaco .container_form h1 {
+    padding: 10px 0px 10px;
+    border-bottom: solid 1px var(--light-white);
+    margin-bottom: 20px;
+}
+
+.relatorio_espaco .container_form .nome_span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.relatorio_espaco .container_form span {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--highlight);
+}
+
+.relatorio_espaco .container_form label {
+    color: var(--light-white);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.relatorio_espaco .container_form input[type="text"],
+.relatorio_espaco .container_form input[type="number"] {
+    padding: 13px 15px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.relatorio_espaco .container_form input[type="time"] {
+    padding: 11px 15px;
+    border-radius: 8px;
+    border: none;
+}
+
+.relatorio_espaco .container_form .wrapper {
+    margin-bottom: 20px;
+}
+
+.relatorio_espaco .container_form .flex_itens {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.relatorio_espaco .container_form .buttons {
+    display: flex;
+}
+
+.relatorio_espaco .container_form .buttons button:first-child {
+    margin-right: 30px;
+}
+
+.relatorio_espaco .container_form .item_horario {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.relatorio_espaco .container_form .item_semana {
+    display: flex;
+    flex-direction: column;
+}

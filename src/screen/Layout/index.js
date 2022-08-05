@@ -1,16 +1,27 @@
+import { useEffect, useState } from "react";
+
 import { Header } from "../../components/Header";
 import { Menu } from "../../components/Menu";
 import { Outlet } from "react-router-dom";
 
 import './layout.screen.css'
+import auth from "../../context/auth";
 
-export const Layout = () => {
+// export const Layout = ({ type, open, close }) => {
+export const Layout = ({ type }) => {
+    const [dataUser, setDataUser] = useState([])
+    const [typeUser, setTypeUser] = useState([])
+
+    useEffect(() => {
+        setDataUser(auth.getUser())
+        setTypeUser(type)
+    }, [])
 
     return (
 
         <div className="container-layout" >
-            <Header />
-            <Menu />
+            <Header data={dataUser} typeUser={typeUser} />
+            <Menu type={typeUser} />
             <Outlet />
         </div>
     )

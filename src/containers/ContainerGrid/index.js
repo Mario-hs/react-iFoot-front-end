@@ -5,15 +5,21 @@ import { ContainerRightBottom } from "../ContainerRightBottom";
 import { useEffect, useState } from "react";
 import api from "../../routes/api";
 
-import './styles.css'
+import './grid.container.css'
+import auth from "../../context/auth";
 
 export const ContainerGrid = ({ type }) => {
     const [inputs, setInputs] = useState([])
 
+
     useEffect(() => {
+        let user = auth.getUser()
+
         if (type === 'peladas') {
 
-            api.getMyPeladas().then(inputs => inputs.data).then((data) => { setInputs({ type: "peladas", datas: data }) })
+            api.axios.get(`/jogadores/${user.id}/reserva_em_grupo`)
+                .then(inputs => inputs.data)
+                .then((data) => { setInputs({ type: "peladas", datas: data }) })
 
         } else if (type === 'arenas') {
 
@@ -23,11 +29,17 @@ export const ContainerGrid = ({ type }) => {
 
             api.getAllPeladas().then(inputs => inputs.data).then((data) => { setInputs({ type: "explorar", datas: data }) })
 
+        } else if (type === 'espaco') {
+
+            api.axios.get(`/campo_horarios/espaco/${user.id}`)
+                .then((data) => { setInputs({ type: "espaco", datas: data.data }) })
         }
     }, [type])
-    // console.log(inputs)
+
     return (
+
         <main className="outlet">
+
             <section className='container_left'>
                 <ContainerLeft props={inputs} />
             </section>
