@@ -110,48 +110,6 @@ input[type=checkbox]:focus {
     box-shadow: 0 0 5px var(--on);
 }
 
-/* input[type=checkbox] {
-    cursor: pointer;
-    margin-left: 85%;
-    appearance: none;
-    width: 14px;
-    height: 14px;
-    border: 1px solid var(--secondary-blue-50);
-    background: linear-gradient(180deg, #0E1647 0%, #0A1033 100%);
-    border-radius: 2px;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    outline: none;
-} */
-
-/* input[type=checkbox]::after {
-    content: '';
-    width: 8px;
-    height: 8px;
-    background: var(--light-green);
-    position: absolute;
-    
-    border-radius: 2px;
-    opacity: 0;
-
-} */
-
-/* input[type=checkbox]:checked::after {
-    opacity: 1;
-} */
-
-/* input[type=checkbox]:checked {
-    border: 1px solid var(--light-green);
-
-}
-
-input[type=checkbox]:focus {
-    box-shadow: 0 0 5px var(--light-green);
-} */
-
 #root {
     background: linear-gradient(180deg, #0E1647 0%, #0A1033 100%);
     min-height: 100vh;

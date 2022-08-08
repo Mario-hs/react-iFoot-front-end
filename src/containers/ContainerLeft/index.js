@@ -7,6 +7,7 @@ import auth from "../../context/auth";
 import icone_red from '../../assets/icon/apito-red.svg';
 import './left.container.css'
 import { Link } from "react-router-dom";
+import { Campo } from "../../components/Campo/index";
 
 export const ContainerLeft = ({ props }) => {
     const [search, setSearch] = useState(null)
@@ -116,6 +117,7 @@ export const ContainerLeft = ({ props }) => {
         }
 
     }, [props])
+
 
     return (
 
@@ -264,77 +266,7 @@ export const ContainerLeft = ({ props }) => {
                                     )} */}
                                 </select>
                             </div>
-                            <ul className="container_list_campo">
-                                <div className="container_campo">
-                                    <div className="title_campo">
-                                        <h1>Campo A</h1>
-                                        <div className="icon_right">
-                                            <Link to='' title="Editar campo">
-                                                <PencilLine size={20} color="#dde3f0" weight="fill" />
-                                            </Link>
-                                            <Link to='' title="Excluir campo">
-                                                <Trash size={20} color="#dde3f0" weight="fill" />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                    <li>
-                                        <Link to='' title="Ver horario de campo" className="icon_left">
-                                            <CalendarBlank size={24} color="#E51C44" weight="fill" />
-                                            <span>Segunda-feira</span>
-                                        </Link>
-                                        <div className="icon_right">
-                                            <Link to='' title="Editar horario de campo">
-                                                <PencilLine size={24} color="#dde3f0" weight="fill" />
-                                            </Link>
-                                            <Link to='' title="Excluir horario de campo">
-                                                <Trash size={24} color="#dde3f0" weight="fill" />
-                                            </Link>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <Link to='' title="Ver horario de campo" className="icon_left">
-                                            <CalendarBlank size={24} color="#E51C44" weight="fill" />
-                                            <span>Segunda-feira</span>
-                                        </Link>
-                                        <div className="icon_right">
-                                            <Link to='' title="Editar horario de campo">
-                                                <PencilLine size={24} color="#dde3f0" weight="fill" />
-                                            </Link>
-                                            <Link to='' title="Excluir horario de campo">
-                                                <Trash size={24} color="#dde3f0" weight="fill" />
-                                            </Link>
-                                        </div>
-                                    </li>
-                                </div>
-
-                                <div className="container_campo">
-                                    <div className="title_campo">
-                                        <h1>Campo A</h1>
-                                        <div className="icon_right">
-                                            <Link to='' title="Editar campo">
-                                                <PencilLine size={20} color="#dde3f0" weight="fill" />
-                                            </Link>
-                                            <Link to='' title="Excluir campo">
-                                                <Trash size={20} color="#dde3f0" weight="fill" />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                    <li>
-                                        <Link to='' title="Ver horario de campo" className="icon_left">
-                                            <CalendarBlank size={24} color="#E51C44" weight="fill" />
-                                            <span>Segunda-feira</span>
-                                        </Link>
-                                        <div className="icon_right">
-                                            <Link to='' title="Editar horario de campo">
-                                                <PencilLine size={24} color="#dde3f0" weight="fill" />
-                                            </Link>
-                                            <Link to='' title="Excluir horario de campo">
-                                                <Trash size={24} color="#dde3f0" weight="fill" />
-                                            </Link>
-                                        </div>
-                                    </li>
-                                </div>
-                            </ul>
+                            <Campo props={dataContainer} />
 
                         </section>
                     </>

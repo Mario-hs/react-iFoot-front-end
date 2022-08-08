@@ -21,7 +21,6 @@ export const Login = () => {
     const bindStateInput = (prop, value) => {
         user[prop] = value
         setUser({ ...user })
-        console.log(user)
     }
 
     const handleSubmit = async (event) => {

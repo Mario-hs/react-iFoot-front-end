@@ -129,7 +129,7 @@ export const RelatorioEspaco = ({ prop: { status }, parentCallback, type, idEspa
                     ? data.map((e) => {
                         return (
                             <>
-                                <li key="1">
+                                <li key="4">
                                     <img src={icon_campo} alt="icone" />
                                     <span>Recebido: R${e === null ? 0 : e},00</span>
                                 </li>
@@ -140,15 +140,15 @@ export const RelatorioEspaco = ({ prop: { status }, parentCallback, type, idEspa
                     data.map((e) => {
                         return (
                             <>
-                                <li key="1">
+                                <li key="5">
                                     <img src={icon_campo} alt="icone" />
                                     <span>Futsal: {e[0] === null ? 0 : e[0]}</span>
                                 </li>
-                                <li key="2">
+                                <li key="6">
                                     <img src={icon_campo} alt="icone" />
                                     <span>Campo: {e[1] === null ? 0 : e[1]}</span>
                                 </li>
-                                <li key="3">
+                                <li key="7">
                                     <img src={icon_campo} alt="icone" />
                                     <span>Society: {e[2] === null ? 0 : e[2]}</span>
                                 </li>

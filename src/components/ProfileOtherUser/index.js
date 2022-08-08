@@ -9,7 +9,7 @@ export const ProfileOtherUser = () => {
             <div className='cc_top'>
                 <div className='cc_data_other_user_photo'></div>
                 <div className='cc_info_other_user'>
-                    <Button tipo={2} msg={"Transferir Dinheiro"} />
+                    <Button type={2} msg={"Transferir Dinheiro"} />
                     <p style={{ marginBottom: "10px" }}>
                         <User size={25} color="#dde3f0" weight="fill" />
                         <span>Nome: Antonielly</span> - <span>24 anos</span>

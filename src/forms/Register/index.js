@@ -20,24 +20,24 @@ export const Register = () => {
 
     const [registerJogador, setRegisterJogador] = useState({
         "id": null,
-        "nome": "",
-        "cpf": "",
-        "emailJogador": "",
-        "dataNascimento": "",
-        "senhaJogador": "",
+        // "nome": "",
+        // "cpf": "",
+        // "emailJogador": "",
+        // "dataNascimento": "",
+        // "senhaJogador": "",
         "qtdAdvertencia": 0,
-        "bairro": "",
+        // "bairro": "",
         "carteira": 50.00,
         "posicao": option.id,
     })
 
     const [registerCampo, setRegisterCampo] = useState({
         "id": null,
-        "nomeEspaco": "",
-        "emailEspaco": "",
-        "cnpj": "",
-        "bairro": "",
-        "senhaEspaco": "",
+        // "nomeEspaco": "",
+        // "emailEspaco": "",
+        // "cnpj": "",
+        // "bairro": "",
+        // "senhaEspaco": "",
         "carteira": 300.0
     })
 
@@ -78,7 +78,7 @@ export const Register = () => {
                 :
                 res = await axios.post('http://localhost:8080/jogadores', registerJogador, { headers: { 'Content-Type': 'application/json' } })
 
-            alert("[COMPLETE - Usuário usuário cadastrado com sucesso]")
+            alert("[COMPLETE] - Usuário usuário cadastrado com sucesso")
 
             history.push("/home");
             window.location.reload();

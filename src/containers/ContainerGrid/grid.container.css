@@ -56,7 +56,7 @@
     background-color: var(--secondary-blue-60);
     display: flex;
     flex-direction: column;
-    min-width: 300px;
+    min-width: 450px;
     max-width: 600px;
     width: 60%;
     max-height: 95%;
@@ -122,10 +122,11 @@
 
 .relatorio_espaco .container_form .buttons {
     display: flex;
+    justify-content: space-evenly;
 }
 
-.relatorio_espaco .container_form .buttons button:first-child {
-    margin-right: 30px;
+.relatorio_espaco .container_form .buttons a {
+    width: 40%;
 }
 
 .relatorio_espaco .container_form .item_horario {

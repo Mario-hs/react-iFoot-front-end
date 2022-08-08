@@ -11,10 +11,12 @@ import icon_home from '../../assets/home.png'
 import icon_criar from '../../assets/criar_horario.png'
 
 import './menu.component.css'
+import auth from '../../context/auth'
 
-export const Menu = ({ type, open, close }) => {
+export const Menu = ({ type }) => {
     const [active, setActive] = useState(null)
     const [modal, setModal] = useState(false)
+    const [dataUser, setDataUser] = useState([])
 
 
     const handleButtonActive = (e) => {
@@ -26,6 +28,7 @@ export const Menu = ({ type, open, close }) => {
     }
 
     useEffect(() => {
+
         if (type === 'espaco') {
             setActive(4)
         } else if (type === 'jogador') {
@@ -33,6 +36,7 @@ export const Menu = ({ type, open, close }) => {
         } else {
             setActive(null)
         }
+
     }, [type])
 
     return (

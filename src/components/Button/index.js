@@ -23,13 +23,13 @@ export const Button = (props) => {
                 </>
             )} {props.type === 2 && (
                 <>
-                    <button className='red' style={{ justifyContent: "center" }}>
+                    <button className='red' style={{ justifyContent: "center", paddingLeft: "10px" }}>
                         {props.msg}
                     </button>
                 </>
             )}{props.type === 3 && (
                 <>
-                    <button className='blue' style={{ justifyContent: "center" }}>
+                    <button className='blue' style={{ justifyContent: "center", paddingLeft: "10px" }}>
                         {props.msg}
                     </button>
                 </>
