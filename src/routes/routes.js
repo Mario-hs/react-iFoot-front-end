@@ -7,11 +7,12 @@ import { Login } from '../forms/Login'
 import { Register } from '../forms/Register'
 import history from './history'
 import auth from '../context/auth'
-import { useEffect, useState } from 'react'
-
 
 export const Router = () => {
+
     let typeUser = auth.getTypeUser()
+    let status = auth.getStatus()
+    console.log(status === 'false')
 
     return (
         <BrowserRouter history={history}>
@@ -19,18 +20,27 @@ export const Router = () => {
                 <Route path='/home' element={<Home />} />
                 <Route path='/register' element={<Register />} />
                 <Route path='/login' element={<Login />} />
-                {typeUser === 'jogador'
-                    ? <Route path='/' element={<Layout type={typeUser} />} >
-                        <Route path='/profile_other_user' element={<ContainerCenter user={'otherUser'} />} />
-                        <Route path='/profile_user' element={<ContainerCenter user={'User'} />} />
-                        <Route path='/peladas' element={<ContainerGrid type={'peladas'} />} />
-                        <Route path='/arenas' element={<ContainerGrid type={'arenas'} />} />
-                        <Route path='/explorar' element={<ContainerGrid type={'explorar'} />} />
+                {status === 'false'
+                    ?
+                    <Route path='/' element={<Layout type={'admin'} />} >
+                        <Route path='/admin/admin' element={<ContainerCenter user={'admin'} />} />
                     </Route>
-                    : <Route path='/' element={<Layout type={typeUser} />} >
-                        <Route path='/profile_espaco' element={<ContainerCenter user={'espaco'} />} />
-                        <Route path='/espaco' element={<ContainerGrid type={'espaco'} />} />
-                    </Route>
+                    :
+                    <>
+                        {typeUser === 'jogador'
+                            ? <Route path='/' element={<Layout type={typeUser} />} >
+                                <Route path='/profile_other_user' element={<ContainerCenter user={'otherUser'} />} />
+                                <Route path='/profile_user' element={<ContainerCenter user={'User'} />} />
+                                <Route path='/peladas' element={<ContainerGrid type={'peladas'} />} />
+                                <Route path='/arenas' element={<ContainerGrid type={'arenas'} />} />
+                                <Route path='/explorar' element={<ContainerGrid type={'explorar'} />} />
+                            </Route>
+                            : <Route path='/' element={<Layout type={typeUser} />} >
+                                <Route path='/profile_espaco' element={<ContainerCenter user={'espaco'} />} />
+                                <Route path='/espaco' element={<ContainerGrid type={'espaco'} />} />
+                            </Route>
+                        }
+                    </>
                 }
 
             </Routes>

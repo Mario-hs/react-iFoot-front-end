@@ -130,19 +130,21 @@ input[type=checkbox]:focus {
     background-color: #DDE3F0;
 }
 
-
+.container_list_campo::-webkit-scrollbar,
 .container_list_peladas::-webkit-scrollbar,
 .container_pelada::-webkit-scrollbar,
 .container_list::-webkit-scrollbar {
     width: 5px;
 }
 
+.container_list_campo::-webkit-scrollbar-track,
 .container_list_peladas::-webkit-scrollbar-track,
 .container_pelada::-webkit-scrollbar-track,
 .container_list::-webkit-scrollbar-track {
     background: none;
 }
 
+.container_list_campo::-webkit-scrollbar-thumb,
 .container_list_peladas::-webkit-scrollbar-thumb,
 .container_pelada::-webkit-scrollbar-thumb,
 .container_list::-webkit-scrollbar-thumb {

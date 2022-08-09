@@ -56,7 +56,7 @@ export const ProfileField = () => {
 
                 await api.axios.delete(`/jogadores/${data.id}`)
 
-                alert('[COMPLETE - Usuário excluido com sucesso]')
+                alert('[COMPLETE] - Usuário excluido com sucesso')
                 auth.logout()
                 history.push("/home");
                 window.location.reload()

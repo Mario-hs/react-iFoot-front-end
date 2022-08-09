@@ -12,6 +12,7 @@ import api from '../../routes/api'
 import './center.container.css'
 import { RelatorioPelada } from '../../components/RelatorioPeladas'
 import { ProfileField } from '../../components/ProfileField'
+import { ProfileADM } from '../../components/ProfileADM'
 
 export const ContainerCenter = ({ user }) => {
     const [modal, setModal] = useState({ status: false, modal: null })
@@ -31,49 +32,57 @@ export const ContainerCenter = ({ user }) => {
     }
 
     useEffect(() => {
-        api.getRankingGols().then(inputs => inputs.data).then((data) => { setRankGol(data) })
-        api.getRankingAssistencias().then(inputs => inputs.data).then((data) => { setRankAss(data) })
+        if (user !== 'admin') {
+            api.getRankingGols().then(inputs => inputs.data).then((data) => { setRankGol(data) })
+            api.getRankingAssistencias().then(inputs => inputs.data).then((data) => { setRankAss(data) })
+        }
     }, [user])
 
     return (
         <main className="container_center">
             <>
-                {user === 'espaco'
+                {user === 'admin'
                     ?
-                    <>
-                        <ProfileField />
-                    </>
+                    <ProfileADM />
                     :
                     <>
-                        {user === 'otherUser' ? (
-                            <ProfileOtherUser />
-                        ) : (
-                            <ProfileUser />
-                        )}
+                        {user === 'espaco'
+                            ?
+                            <>
+                                <ProfileField />
+                            </>
+                            :
+                            <>
+                                {user === 'otherUser' ? (
+                                    <ProfileOtherUser />
+                                ) : (
+                                    <ProfileUser />
+                                )}
 
-                        <section className='cc_relatorios'>
-                            <h1>Relatório</h1>
-                            <div className='cc_buttons'>
-                                <Link to='#ranking' onClick={() => handleModal('RANK')}>
-                                    <Button type={3} msg={"Ranking"} />
-                                </Link>
-                                <Link to='#peladas' onClick={() => handleModal('PELADAS')}>
-                                    <Button type={3} msg={"Peladas Batidas"} />
-                                </Link>
-                            </div>
-                        </section>
+                                <section className='cc_relatorios'>
+                                    <h1>Relatório</h1>
+                                    <div className='cc_buttons'>
+                                        <Link to='#ranking' onClick={() => handleModal('RANK')}>
+                                            <Button type={3} msg={"Ranking"} />
+                                        </Link>
+                                        <Link to='#peladas' onClick={() => handleModal('PELADAS')}>
+                                            <Button type={3} msg={"Peladas Batidas"} />
+                                        </Link>
+                                    </div>
+                                </section>
 
-                        {modal.status === true && modal.modal === 'RANK'
-                            ? <Rank prop={{ status: true, rank_gol: rankGol, rank_ass: rankAss }} parentCallback={handleCallback} />
-                            : (<></>)
+                                {modal.status === true && modal.modal === 'RANK'
+                                    ? <Rank prop={{ status: true, rank_gol: rankGol, rank_ass: rankAss }} parentCallback={handleCallback} />
+                                    : (<></>)
+                                }
+
+                                {modal.status === true && modal.modal === 'PELADAS'
+                                    ? <RelatorioPelada prop={{ status: true }} parentCallback={handleCallback} />
+                                    : (<></>)
+                                }
+                            </>
                         }
-
-                        {modal.status === true && modal.modal === 'PELADAS'
-                            ? <RelatorioPelada prop={{ status: true }} parentCallback={handleCallback} />
-                            : (<></>)
-                        }
-                    </>
-                }
+                    </>}
 
             </>
 

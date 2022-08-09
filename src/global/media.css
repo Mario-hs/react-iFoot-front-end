@@ -42,6 +42,14 @@
         grid-template-columns: none;
     }
 
+    .container_link {
+        justify-content: center;
+    }
+
+    .container_link a {
+        margin-bottom: 10px;
+    }
+
     .container_right_top {
         width: 100%;
     }

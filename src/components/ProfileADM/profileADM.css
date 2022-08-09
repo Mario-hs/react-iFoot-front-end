@@ -1,0 +1,26 @@
+.adm {
+    flex-direction: column;
+    width: 100%;
+}
+
+.container_link {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container_link:first-child {
+    margin-bottom: 40px;
+}
+
+.container_link img {
+    width: 30px;
+}
+
+.container_link a {
+    display: flex;
+    width: 185px;
+    justify-content: space-evenly;
+    align-content: center;
+}

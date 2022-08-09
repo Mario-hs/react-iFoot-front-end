@@ -170,8 +170,13 @@ p {
 
 .container_list_campo .icon_right {
     display: flex;
-    width: 60px;
     justify-content: space-between;
+    align-items: center;
+    width: 150px;
+    color: var(--light-white);
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
 }
 
 .container_list_campo .title_campo .icon_right {

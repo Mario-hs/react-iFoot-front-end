@@ -9,15 +9,13 @@ import icon_peladas from '../../assets/peladas.png'
 import icon_explorar from '../../assets/explorar.png'
 import icon_home from '../../assets/home.png'
 import icon_criar from '../../assets/criar_horario.png'
+import icon_sair_adm from '../../assets/sair.png'
 
 import './menu.component.css'
-import auth from '../../context/auth'
 
 export const Menu = ({ type }) => {
     const [active, setActive] = useState(null)
     const [modal, setModal] = useState(false)
-    const [dataUser, setDataUser] = useState([])
-
 
     const handleButtonActive = (e) => {
         setActive(e)
@@ -41,53 +39,66 @@ export const Menu = ({ type }) => {
 
     return (
         <nav className="container-nav">
-            {type === 'espaco'
-                ? <>
-                    <Link to='/espaco' onClick={(e) => {
-                        handleButtonActive(4)
-                    }} className={`${active === 4 ? 'nav top active' : 'nav top'}`} >
-                        <img src={icon_home} alt="Home" />
-                        <p>Home</p>
-                    </Link>
-                    <Link to='#novo' onClick={(e) => {
-                        handleButtonActive(5)
-                        setModal(true)
-                    }} className={`${active === 5 ? 'nav bottom active' : 'nav bottom'}`}>
-                        <img src={icon_criar} alt="Mais campo" />
-                        <p>Criar</p>
-                    </Link>
+            {type === 'admin'
+                ?
+                <Link to='/home' onClick={(e) => {
 
-                    {modal === true
-                        ? <NewCampo parentCallback={handleCallback} />
-                        : (<></>)
+                }} className={`${active === 5 ? 'nav unique active' : 'nav unique'}`}>
+                    <img src={icon_sair_adm} alt="Sair" />
+                    <p>Criar</p>
+                </Link>
+                :
+                <>
+                    {type === 'espaco'
+                        ? <>
+                            <Link to='/espaco' onClick={(e) => {
+                                handleButtonActive(4)
+                            }} className={`${active === 4 ? 'nav top active' : 'nav top'}`} >
+                                <img src={icon_home} alt="Home" />
+                                <p>Home</p>
+                            </Link>
+                            <Link to='#novo' onClick={(e) => {
+                                handleButtonActive(5)
+                                setModal(true)
+                            }} className={`${active === 5 ? 'nav bottom active' : 'nav bottom'}`}>
+                                <img src={icon_criar} alt="Mais campo" />
+                                <p>Criar</p>
+                            </Link>
+
+                            {modal === true
+                                ? <NewCampo parentCallback={handleCallback} />
+                                : (<></>)
+                            }
+                        </>
+                        : <></>
+                    }
+
+                    {type === 'jogador'
+                        ? <>
+                            <Link to='/peladas' onClick={(e) => {
+                                handleButtonActive(1)
+                            }} className={`${active === 1 ? 'nav top active' : 'nav top'}`} >
+                                <img src={icon_peladas} alt="icone de peladas" />
+                                <p>Peladas</p>
+                            </Link>
+                            <Link to='/explorar' onClick={(e) => {
+                                handleButtonActive(2)
+                            }} className={`${active === 2 ? 'nav middle active' : 'nav middle'}`} >
+                                <img src={icon_explorar} alt="icone de explorar" />
+                                <p>Explorar</p>
+                            </Link>
+                            <Link to='/arenas' onClick={(e) => {
+                                handleButtonActive(3)
+                            }} className={`${active === 3 ? 'nav bottom active' : 'nav bottom'}`}>
+                                <img src={icon_arenas} alt="icone de arenas" />
+                                <p>Arenas</p>
+                            </Link>
+                        </>
+                        : <></>
                     }
                 </>
-                : <></>
             }
 
-            {type === 'jogador'
-                ? <>
-                    <Link to='/peladas' onClick={(e) => {
-                        handleButtonActive(1)
-                    }} className={`${active === 1 ? 'nav top active' : 'nav top'}`} >
-                        <img src={icon_peladas} alt="icone de peladas" />
-                        <p>Peladas</p>
-                    </Link>
-                    <Link to='/explorar' onClick={(e) => {
-                        handleButtonActive(2)
-                    }} className={`${active === 2 ? 'nav middle active' : 'nav middle'}`} >
-                        <img src={icon_explorar} alt="icone de explorar" />
-                        <p>Explorar</p>
-                    </Link>
-                    <Link to='/arenas' onClick={(e) => {
-                        handleButtonActive(3)
-                    }} className={`${active === 3 ? 'nav bottom active' : 'nav bottom'}`}>
-                        <img src={icon_arenas} alt="icone de arenas" />
-                        <p>Arenas</p>
-                    </Link>
-                </>
-                : <></>
-            }
         </nav>
     )
 }

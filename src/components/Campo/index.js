@@ -3,38 +3,33 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { CalendarBlank, PencilLine, Trash } from "phosphor-react";
+// import api from "../../routes/api";
 
 
 export const Campo = ({ props }) => {
     const [data, setData] = useState([])
-    const [test, setTest] = useState([])
 
     useEffect(() => {
-        if (props !== []) {
-            handleShowData()
-        }
-    }, [])
-
-    const handleShowData = () => {
         let equalField = []
         let formattedData = []
 
-
-        props.map((item, i = 0) => {
+        props.forEach((item, indicator = 0) => {
+            let hora = []
+            let campo = []
+            let id_campo_horario
 
             equalField = props.filter((element) => {
                 return element.campo.id === item.campo.id
             })
 
-            let hora = []
-            let campo = []
-            let id_campo_horario
-
             equalField.forEach((item, index = 0) => {
+
                 index++
+
                 if (index === 1) {
                     id_campo_horario = item.id
-                    campo.push(item.campo)
+                    // campo.push(item.campo)
+                    campo.push({ campo: item.campo })
                     hora.push(item.horario)
                 } else {
                     hora.push(item.horario)
@@ -42,78 +37,154 @@ export const Campo = ({ props }) => {
 
             })
 
-            if (i === 0) {
+            if (indicator === 0) {
 
                 formattedData.push({
                     id: id_campo_horario,
-                    campo: campo,
+                    campo: campo[0].campo,
                     hora: hora
                 })
 
             } else {
+
                 if (formattedData.find(e => e.id === id_campo_horario)) {
 
                 } else {
                     formattedData.push({
                         id: id_campo_horario,
-                        campo: campo,
+                        // campo: campo,
+                        campo: campo[0].campo,
                         hora: hora
                     })
                 }
             }
-            setData({ ...formattedData })
 
+            setData([...formattedData])
 
-            i++
+            indicator++
         });
 
+    }, [props])
+
+
+    const handleClickField = (event, method, id_field) => {
+        event.preventDefault();
+        if (method === 'DELETE') {
+
+            try {
+
+                // api.axios.delete(`/campos/${id_field}`)
+
+                alert('[COMPLETE] - Campo excluido com sucesso')
+                // window.location.reload()
+
+            } catch (error) {
+
+                alert(error.response.data.message)
+                console.error(error)
+
+            }
+        } else {
+            try {
+
+                // api.axios.put(`/campos/${id_field}`, INFORMACAOAATUALIZAR)
+
+                alert('[COMPLETE] - Campo alterado com sucesso')
+                // window.location.reload()
+
+            } catch (error) {
+
+                alert(error.response.data.message)
+                console.error(error)
+
+            }
+        }
+        console.log(method)
+        console.log(id_field)
+        console.log('------')
     }
-    console.log(data)
+
+    const handleClickHour = (event, method, id_field, id_hour) => {
+        event.preventDefault();
+
+        if (method === 'DELETE') {
+            try {
+
+                // api.axios.delete(`/campo_horarios/${id_hour}`)
+                // alert('[COMPLETE] - Horário excluido com sucesso')
+                // window.location.reload()
+
+            } catch (error) {
+
+                alert(error.response.data.message)
+                console.error(error)
+
+            }
+        } else {
+            try {
+
+                // api.axios.put(`/campo_horarios/${id_field}`, INFORMACAOAATUALIZAR)
+                // alert('[COMPLETE] - Campo alterado com sucesso')
+                // window.location.reload()
+
+            } catch (error) {
+
+                alert(error.response.data.message)
+                console.error(error)
+
+            }
+        }
+        console.log(method)
+        console.log(id_field)
+        console.log(id_hour)
+        console.log('------')
+    }
 
     return (
-        <ul className="container_list_campo">
-            {/* {data.map((element, index) => {
+        <section className="container_list_campo">
+            {data.map((element, index) => {
                 return (
-                    <div className="container_campo" key={index}>
-
-                        {element.map(item => {
+                    <ul className="container_campo" key={index} >
+                        <div className="title_campo">
+                            <h1>Campo {element.campo.nomeCampo}</h1>
+                            <div className="icon_right">
+                                <Link to='' title="Editar campo"
+                                    onClick={(e) => { handleClickField(e, 'PUT', element.campo.id) }}>
+                                    <PencilLine size={20} color="#dde3f0" weight="fill" />
+                                </Link>
+                                <Link to='' title="Excluir campo"
+                                    onClick={(e) => { handleClickField(e, 'DELETE', element.campo.id) }}>
+                                    <Trash size={20} color="#dde3f0" weight="fill" />
+                                </Link>
+                            </div>
+                        </div>
+                        {element.hora.map((item, key) => {
                             return (
-                                <>
-
-                                    <div className="title_campo">
-                                        <h1>{item.campo.nomeCampo}</h1>
-                                        <div className="icon_right">
-                                            <Link to='' title="Editar campo">
-                                                <PencilLine size={20} color="#dde3f0" weight="fill" />
-                                            </Link>
-                                            <Link to='' title="Excluir campo">
-                                                <Trash size={20} color="#dde3f0" weight="fill" />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                     <li>
-                                        <Link to='' title="Ver horario de campo" className="icon_left">
-                                            <CalendarBlank size={24} color="#E51C44" weight="fill" />
-                                            <span> {element.horario.diaSemana}</span>
+                                <li key={key} value={item.id}>
+                                    <Link to='' title="Ver horario de campo" className="icon_left">
+                                        <CalendarBlank size={24} color="#E51C44" weight="fill" />
+                                        <span> {item.diaSemana} </span>
+                                    </Link>
+                                    <div className="icon_right">
+                                        <span> às {item.hora}h </span>
+                                        <Link to='' title="Editar horario de campo">
+                                            <PencilLine size={24} color="#dde3f0" weight="fill"
+                                                onClick={(e) => { handleClickHour(e, 'PUT', element.campo.id, item.id) }} />
                                         </Link>
-                                        <div className="icon_right">
-                                            <Link to='' title="Editar horario de campo">
-                                                <PencilLine size={24} color="#dde3f0" weight="fill" />
-                                            </Link>
-                                            <Link to='' title="Excluir horario de campo">
-                                                <Trash size={24} color="#dde3f0" weight="fill" />
-                                            </Link>
-                                        </div>
-                                    </li> 
-                                </>
+                                        <Link to='' title="Excluir horario de campo">
+                                            <Trash size={24} color="#dde3f0" weight="fill"
+                                                onClick={(e) => { handleClickHour(e, 'DELETE', element.campo.id, item.id) }} />
+                                        </Link>
+                                    </div>
+                                </li>
                             )
                         })}
-                    </div>
+                    </ul>
                 )
 
-            })} */}
+            })}
 
-        </ul>
+        </section>
     )
 }
 

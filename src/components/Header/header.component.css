@@ -18,6 +18,11 @@ nav {
     align-items: center;
 }
 
+.admin {
+    width: 100%;
+    justify-content: center;
+}
+
 .info img {
     margin: 5px;
 }

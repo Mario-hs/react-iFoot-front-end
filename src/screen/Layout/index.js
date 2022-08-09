@@ -13,9 +13,13 @@ export const Layout = ({ type }) => {
     const [typeUser, setTypeUser] = useState([])
 
     useEffect(() => {
-        setDataUser(auth.getUser())
         setTypeUser(type)
-    }, [])
+        if (type !== 'admin') {
+            setDataUser(auth.getUser())
+        } else {
+            setDataUser({ admin: 'admin' })
+        }
+    }, [type])
 
     return (
 
@@ -26,6 +30,8 @@ export const Layout = ({ type }) => {
         </div>
     )
 }
+
+
 
 
 // {/* <Lightning size={32} color="#dde3f0" weight="fill" />
