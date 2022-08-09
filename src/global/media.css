@@ -198,6 +198,19 @@
 }
 
 @media (max-width: 780px) {
+    .container_center .adm .container_link p {
+        justify-content: left;
+        margin-left: 10px;
+    }
+
+    .container_center .adm .container_link a {
+        justify-content: flex-start;
+    }
+
+    .container_center .adm .container_link img {
+        width: 25px;
+    }
+
     .outlet {
         column-gap: 0;
     }

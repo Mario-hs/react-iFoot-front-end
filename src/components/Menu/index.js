@@ -45,7 +45,7 @@ export const Menu = ({ type }) => {
 
                 }} className={`${active === 5 ? 'nav unique active' : 'nav unique'}`}>
                     <img src={icon_sair_adm} alt="Sair" />
-                    <p>Criar</p>
+                    <p>SAIR</p>
                 </Link>
                 :
                 <>

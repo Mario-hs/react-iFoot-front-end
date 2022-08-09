@@ -110,6 +110,16 @@ input[type=checkbox]:focus {
     box-shadow: 0 0 5px var(--on);
 }
 
+textarea {
+    padding: 15px 15px;
+    border-radius: 8px;
+    border: none;
+    color: var(--secondary-blue-60);
+    font-family: "Inter";
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
 #root {
     background: linear-gradient(180deg, #0E1647 0%, #0A1033 100%);
     min-height: 100vh;
@@ -149,5 +159,4 @@ input[type=checkbox]:focus {
 .container_pelada::-webkit-scrollbar-thumb,
 .container_list::-webkit-scrollbar-thumb {
     background-color: #0E1647;
-
 }

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { X } from "phosphor-react";
 import { Button } from "../../components/Button";
-import history from "../../routes/history";
 import auth from "../../context/auth";
 import { useEffect, useState } from "react";
 import api from "../../routes/api";

@@ -36,20 +36,12 @@ export const ProfileUser = () => {
         return score
     }
 
-    useEffect(() => {
-        setDataUser(auth.getUser())
-        api.getPosicoes().then((e) => {
-            setOptions(options => [...e.data])
-        })
-    }, [])
-
     const handleSubmit = async (event, method) => {
         event.preventDefault();
         if (method === 'DELETE') {
             try {
-                let res = await api.axios.delete(`/jogadores/${dataUser.id}`)
-                console.log(method)
-                console.log(res)
+                await api.axios.delete(`/jogadores/${dataUser.id}`)
+
                 alert('[COMPLETE - Usuário excluido com sucesso]')
                 auth.logout()
                 history.push("/home");
@@ -61,7 +53,6 @@ export const ProfileUser = () => {
         } else {
             try {
                 await api.axios.put(`/jogadores/${dataUser.id}`, dataUser)
-                console.log(method)
                 alert('[COMPLETE - Cadastro alterado com sucesso]')
                 window.location.reload()
             } catch (error) {
@@ -70,6 +61,15 @@ export const ProfileUser = () => {
             }
         }
     }
+
+    useEffect(() => {
+        setDataUser(auth.getUser())
+        api.getPosicoes().then((e) => {
+            setOptions(options => [...e.data])
+        })
+    }, [])
+
+
 
     return (
         <section className='cc_data_user'>

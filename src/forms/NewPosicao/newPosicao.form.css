@@ -1,0 +1,23 @@
+.form_adm {
+    background: linear-gradient(180deg, #0E1647 29.69%, #E51C44 100%)
+}
+
+.form_adm input,
+.form_adm select {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form_adm .inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form_adm .inputs div:first-child {
+    width: 60%;
+}
+
+.form_adm .inputs div:last-child {
+    width: 25%;
+}

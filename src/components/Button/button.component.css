@@ -19,19 +19,20 @@ button {
 }
 
 .red {
-    background: var(--primary-red);
+    background: var(--line);
+    border: solid 2px var(--line);
     padding: 10px 10px 10px 0px;
-    border: solid 2px var(--primary-red);
+
 }
 
 .red img {
-    border-right: solid 2px var(--line);
+    border-right: solid 2px var(--primary-red);
 }
 
 .red:hover {
     transition: 0.2s;
-    background: var(--line);
-    border: solid 2px var(--line);
+    background: var(--primary-red);
+    border: solid 2px var(--primary-red);
 }
 
 .blue img {
@@ -39,9 +40,12 @@ button {
 }
 
 .blue {
-    background: none;
+
+    /* background: none; */
+    background: var(--secondary-blue-90);
     padding: 10px 10px 10px 0px;
-    border: solid 2px var(--secondary-blue-30);
+    border: solid 2px var(--secondary-blue-90);
+    /* border: solid 2px var(--secondary-blue-30); */
 }
 
 .buttons_confirmes .blue {
@@ -51,4 +55,5 @@ button {
 .blue:hover {
     transition: 0.2s;
     background: var(--secondary-blue-30);
+    border: solid 2px var(--secondary-blue-30);
 }

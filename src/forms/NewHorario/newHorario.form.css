@@ -1,0 +1,39 @@
+.form_adm {
+    background: linear-gradient(180deg, #0E1647 29.69%, #E51C44 100%)
+}
+
+.form_adm input,
+.form_adm select {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form_adm input[type=checkbox] {
+    margin-left: 10px;
+    border-radius: 2px;
+    width: 18px;
+    height: 18px;
+}
+
+.form_adm input[type=time] {
+    font-family: 'Inter';
+    font-weight: 500;
+    color: var(--secondary-blue-60);
+}
+
+.form_adm input[type=checkbox]::after {
+    border-radius: 0%;
+    width: 10px;
+    height: 10px;
+}
+
+.relatorio_espaco .form_adm .input_status label,
+.relatorio_espaco .form_adm .input_status input {
+    margin-bottom: 0px;
+}
+
+.form_adm .input_status {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}

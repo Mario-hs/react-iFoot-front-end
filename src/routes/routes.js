@@ -12,7 +12,6 @@ export const Router = () => {
 
     let typeUser = auth.getTypeUser()
     let status = auth.getStatus()
-    console.log(status === 'false')
 
     return (
         <BrowserRouter history={history}>
