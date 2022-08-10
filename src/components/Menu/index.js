@@ -66,7 +66,7 @@ export const Menu = ({ type }) => {
                             </Link>
 
                             {modal === true
-                                ? <NewCampo parentCallback={handleCallback} />
+                                ? <NewCampo parentCallback={handleCallback} data={null} />
                                 : (<></>)
                             }
                         </>

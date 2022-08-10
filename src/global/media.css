@@ -164,6 +164,11 @@
         height: calc(850px - 250px);
     }
 
+    .container_left .arenas {
+        height: calc(850px - 350px);
+
+    }
+
     .container_right_bottom {
         grid-column: 1 / 3;
         grid-row: 3 / 4;

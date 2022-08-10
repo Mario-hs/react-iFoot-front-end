@@ -2,117 +2,53 @@ import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 
-import { CalendarBlank, PencilLine, Trash } from "phosphor-react";
-// import api from "../../routes/api";
+import { CalendarBlank, PencilLine, Plus, Trash } from "phosphor-react";
+
+import api from "../../routes/api";
+import { NewCampo } from "../../forms/NewCampo";
 
 
-export const Campo = ({ props }) => {
-    const [data, setData] = useState([])
+export const Campo = ({ campos, campohorario }) => {
+    const [campoHorarios, setCampoHorarios] = useState([])
+    const [modal, setModal] = useState({ open: false, type: null, data: null })
 
-    useEffect(() => {
-        let equalField = []
-        let formattedData = []
-
-        props.forEach((item, indicator = 0) => {
-            let hora = []
-            let campo = []
-            let id_campo_horario
-
-            equalField = props.filter((element) => {
-                return element.campo.id === item.campo.id
-            })
-
-            equalField.forEach((item, index = 0) => {
-
-                index++
-
-                if (index === 1) {
-                    id_campo_horario = item.id
-                    // campo.push(item.campo)
-                    campo.push({ campo: item.campo })
-                    hora.push(item.horario)
-                } else {
-                    hora.push(item.horario)
-                }
-
-            })
-
-            if (indicator === 0) {
-
-                formattedData.push({
-                    id: id_campo_horario,
-                    campo: campo[0].campo,
-                    hora: hora
-                })
-
-            } else {
-
-                if (formattedData.find(e => e.id === id_campo_horario)) {
-
-                } else {
-                    formattedData.push({
-                        id: id_campo_horario,
-                        // campo: campo,
-                        campo: campo[0].campo,
-                        hora: hora
-                    })
-                }
-            }
-
-            setData([...formattedData])
-
-            indicator++
-        });
-
-    }, [props])
-
-
-    const handleClickField = (event, method, id_field) => {
-        event.preventDefault();
-        if (method === 'DELETE') {
-
-            try {
-
-                // api.axios.delete(`/campos/${id_field}`)
-
-                alert('[COMPLETE] - Campo excluido com sucesso')
-                // window.location.reload()
-
-            } catch (error) {
-
-                alert(error.response.data.message)
-                console.error(error)
-
-            }
-        } else {
-            try {
-
-                // api.axios.put(`/campos/${id_field}`, INFORMACAOAATUALIZAR)
-
-                alert('[COMPLETE] - Campo alterado com sucesso')
-                // window.location.reload()
-
-            } catch (error) {
-
-                alert(error.response.data.message)
-                console.error(error)
-
-            }
-        }
-        console.log(method)
-        console.log(id_field)
-        console.log('------')
+    const handleCallback = () => {
+        setModal({ open: false, type: null })
+        window.location.reload()
     }
 
-    const handleClickHour = (event, method, id_field, id_hour) => {
+    const handleDeleteField = async (event, id_field) => {
+        event.preventDefault();
+
+        try {
+
+            await api.axios.delete(`/campos/${id_field}`)
+
+            alert('[COMPLETE] - Campo excluido com sucesso')
+            window.location.reload()
+
+        } catch (error) {
+
+            alert(error.response.data.message)
+            console.error(error)
+
+        }
+    }
+
+    const handlePutField = async (event, field) => {
+        event.preventDefault();
+        setModal({ open: true, type: 'CAMPO', data: field })
+    }
+
+    const handleClickHour = async (event, method, id_field_hour) => {
         event.preventDefault();
 
         if (method === 'DELETE') {
             try {
 
-                // api.axios.delete(`/campo_horarios/${id_hour}`)
-                // alert('[COMPLETE] - Horário excluido com sucesso')
-                // window.location.reload()
+                await api.axios.delete(`/campo_horarios/${id_field_hour}`)
+                alert('[COMPLETE] - Horário excluido com sucesso')
+                window.location.reload()
 
             } catch (error) {
 
@@ -134,134 +70,101 @@ export const Campo = ({ props }) => {
 
             }
         }
-        console.log(method)
-        console.log(id_field)
-        console.log(id_hour)
-        console.log('------')
     }
 
+    useEffect(() => {
+        let formattedDataCampoHorario = []
+        campos.forEach((item, indicator = 0) => {
+            let equalField = []
+            let horario = []
+            let id_campo_horario = []
+
+            equalField = campohorario.filter((element) => {
+                return element.campo.id === item.id
+            })
+
+            equalField.forEach((item) => {
+                horario.push(item.horario)
+                id_campo_horario.push(item.id)
+            })
+
+            formattedDataCampoHorario.push({
+                campo: item,
+                horario: horario,
+                id_campo_horario: id_campo_horario
+            })
+            setCampoHorarios([...formattedDataCampoHorario])
+        });
+
+    }, [campos, campohorario])
+
     return (
-        <section className="container_list_campo">
-            {data.map((element, index) => {
-                return (
-                    <ul className="container_campo" key={index} >
-                        <div className="title_campo">
-                            <h1>Campo {element.campo.nomeCampo}</h1>
-                            <div className="icon_right">
-                                <Link to='' title="Editar campo"
-                                    onClick={(e) => { handleClickField(e, 'PUT', element.campo.id) }}>
-                                    <PencilLine size={20} color="#dde3f0" weight="fill" />
-                                </Link>
-                                <Link to='' title="Excluir campo"
-                                    onClick={(e) => { handleClickField(e, 'DELETE', element.campo.id) }}>
-                                    <Trash size={20} color="#dde3f0" weight="fill" />
-                                </Link>
-                            </div>
-                        </div>
-                        {element.hora.map((item, key) => {
-                            return (
-                                <li key={key} value={item.id}>
-                                    <Link to='' title="Ver horario de campo" className="icon_left">
-                                        <CalendarBlank size={24} color="#E51C44" weight="fill" />
-                                        <span> {item.diaSemana} </span>
-                                    </Link>
+        <>
+            <section className="container_list_campo">
+                {campoHorarios.map((element, index) => {
+                    return (
+                        <ul className="container_campo" key={index} >
+                            <div className="container_data_campo">
+                                <div className="title_campo">
+                                    <h1>Campo {element.campo.nomeCampo}</h1>
                                     <div className="icon_right">
-                                        <span> às {item.hora}h </span>
-                                        <Link to='' title="Editar horario de campo">
-                                            <PencilLine size={24} color="#dde3f0" weight="fill"
-                                                onClick={(e) => { handleClickHour(e, 'PUT', element.campo.id, item.id) }} />
+                                        <Link to='#editarCampo' title="Editar campo"
+                                            onClick={(e) => { handlePutField(e, element.campo) }}>
+                                            <PencilLine size={20} color="#dde3f0" weight="fill" />
                                         </Link>
-                                        <Link to='' title="Excluir horario de campo">
-                                            <Trash size={24} color="#dde3f0" weight="fill"
-                                                onClick={(e) => { handleClickHour(e, 'DELETE', element.campo.id, item.id) }} />
+                                        <Link to='' title="Excluir campo"
+                                            onClick={(e) => { handleDeleteField(e, element.campo.id) }}>
+                                            <Trash size={20} color="#dde3f0" weight="fill" />
                                         </Link>
                                     </div>
-                                </li>
-                            )
-                        })}
-                    </ul>
-                )
+                                </div>
+                                <p className="type_campo">Tipo: {element.campo.tipoCampo}</p>
+                                <div className="valor_campo">
+                                    <p>U: {element.campo.valorUnit},00</p>
+                                    <p>M: {element.campo.valorMes},00</p>
+                                    <p>A: {element.campo.valorAno},00</p>
+                                </div>
+                            </div>
 
-            })}
+                            {element.horario.length > 0
+                                ? <>
+                                    {element.horario.map((item, key) => {
+                                        return (
+                                            <li key={key} value={item.id}>
+                                                <Link to='#' title="Ver horario de campo" className="icon_left">
+                                                    <CalendarBlank size={24} color="#E51C44" weight="fill" />
+                                                    <span> {item.diaSemana} </span>
+                                                </Link>
+                                                <div className="icon_right">
+                                                    <span> às {item.hora}h </span>
+                                                    {/* <Link to='' title="Editar horario de campo">
+                                                    <PencilLine size={24} color="#dde3f0" weight="fill"
+                                                        onClick={(e) => { handleClickHour(e, 'PUT', element.campo.id, item.id) }} />
+                                                </Link> */}
+                                                    <Link to='#deleteHorario' title="Excluir horario de campo">
+                                                        <Trash size={24} color="#dde3f0" weight="fill"
+                                                            onClick={(e) => { handleClickHour(e, 'DELETE', element.id_campo_horario[key]) }} />
+                                                    </Link>
+                                                </div>
+                                            </li>
+                                        )
+                                    })}</>
+                                : <></>
+                            }
+                            <Link to="#addHorario" className="add_horario">
+                                <Plus size={20} color="#dde3f0" weight="fill" />
+                            </Link>
+                        </ul>
+                    )
 
-        </section>
+                })}
+
+            </section>
+
+            {modal.open === true
+                ? <NewCampo parentCallback={handleCallback} data={modal.data} />
+                : (<></>)
+            }
+        </>
     )
 }
-
-// {/* <div className="container_campo">
-// <div className="title_campo">
-//     <h1>Campo B</h1>
-//     <div className="icon_right">
-//         <Link to='' title="Editar campo">
-//             <PencilLine size={20} color="#dde3f0" weight="fill" />
-//         </Link>
-//         <Link to='' title="Excluir campo">
-//             <Trash size={20} color="#dde3f0" weight="fill" />
-//         </Link>
-//     </div>
-// </div>
-// <li>
-//     <Link to='' title="Ver horario de campo" className="icon_left">
-//         <CalendarBlank size={24} color="#E51C44" weight="fill" />
-//         <span>Segunda-feira</span>
-//     </Link>
-//     <div className="icon_right">
-//         <Link to='' title="Editar horario de campo">
-//             <PencilLine size={24} color="#dde3f0" weight="fill" />
-//         </Link>
-//         <Link to='' title="Excluir horario de campo">
-//             <Trash size={24} color="#dde3f0" weight="fill" />
-//         </Link>
-//     </div>
-// </li>
-// </div> */}
-
-
-// const handleShowData = () => {
-//     let equalField = []
-//     let aux = []
-//     let formattedData = []
-
-//     props.map(item => {
-
-//         equalField = props.filter((element) => {
-//             if (element.campo.id === item.campo.id) {
-//                 return element
-//             }
-//         })
-
-//         if (aux !== []) {
-//             aux.forEach((item) => {
-
-//                 if (equalField.length === item.length) {
-//                     for (let i = 0; i < equalField.length; i++) {
-//                         if (equalField[i].campo.id !== item[i].campo.id) {
-//                             formattedData.push(equalField)
-//                         }
-
-//                     }
-
-
-//                 } else {
-
-//                     for (let i = 0; i < equalField.length; i++) {
-//                         if (equalField[i].campo.id !== item[i].campo.id) {
-//                             formattedData.push(equalField)
-//                         }
-
-//                     }
-
-//                 }
-
-//             })
-//         }
-//         if (aux.length === 0) {
-//             aux.push(equalField)
-//             formattedData.push(equalField)
-//         }
-
-//     });
-
-//     setData(formattedData)
-//     // console.log(data)
-// }
